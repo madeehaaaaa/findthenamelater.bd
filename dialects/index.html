@@ -7,16 +7,14 @@
 </head>
 <body>
 
-<nav>
-  <a href="../index.html">Home</a>
-  <a href="../language/">Language</a>
-  <a href="../history/">History</a>
-  <a href="../dialects/">Dialects</a>
-  <a href="../art/">Art</a>
-  <a href="../music/">Music</a>
-  <a href="../archive/">Archive</a>
-  <a href="../about.html">About</a>
-</nav>
+<div id="nav-placeholder"></div>
+<script>
+  fetch("/findthenamelater.bd/includes/nav.html")
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById("nav-placeholder").innerHTML = html;
+    });
+</script>
 
 <main>
   <h1>Dialects</h1>
