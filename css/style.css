@@ -1,110 +1,194 @@
-/* =========================
-   AOBD Minimal CSS
-   Clean & readable archive
-========================= */
+/* =====================================================
+   AOBD — Style.css
+   Stunning, professional, immersive design for your archive
+===================================================== */
 
-/* Reset some defaults */
+/* === Reset and base styles === */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  line-height: 1.6;
-  background-color: #fdfcf9; /* light archival feel */
-  color: #1a1a1a;
-  padding: 20px;
+    font-family: 'Poppins', sans-serif;
+    background: #fdf6f0; /* warm subtle background */
+    color: #333;
+    line-height: 1.7;
+    scroll-behavior: smooth;
 }
 
-/* Navigation styling */
+/* === Navigation === */
 nav {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 15px;
-  margin-bottom: 30px;
-  border-bottom: 1px solid #ddd;
-  padding-bottom: 10px;
+    background: #2c1f2b; /* deep purple-burgundy */
+    display: flex;
+    justify-content: center;
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.2);
 }
 
 nav a {
-  text-decoration: none;
-  color: #0d3b66; /* calm dark blue */
-  font-weight: 500;
-  transition: color 0.2s ease;
+    color: #fdf6f0;
+    margin: 0 20px;
+    text-decoration: none;
+    font-weight: 600;
+    position: relative;
+    transition: 0.3s;
 }
 
 nav a:hover {
-  color: #faa307; /* subtle highlight on hover */
+    color: #ffd166; /* golden hover */
 }
 
-/* Main content styling */
-main h1 {
-  margin-bottom: 20px;
-  font-size: 2rem;
-  color: #0d3b66;
+nav a::after {
+    content: '';
+    display: block;
+    height: 2px;
+    width: 0;
+    background: #ffd166;
+    transition: 0.3s;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
 }
 
-main h2 {
-  margin-top: 25px;
-  margin-bottom: 10px;
-  font-size: 1.5rem;
-  color: #1a1a1a;
+nav a:hover::after {
+    width: 100%;
 }
 
-main p {
-  margin-bottom: 15px;
+/* === Main content === */
+main {
+    max-width: 1100px;
+    margin: 50px auto;
+    padding: 0 20px;
 }
 
-main ul {
-  list-style-type: disc;
-  margin-left: 20px;
-  margin-bottom: 15px;
+h1 {
+    font-size: 3rem;
+    color: #2c1f2b;
+    text-align: center;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
 }
 
-main li {
-  margin-bottom: 5px;
+h2 {
+    font-size: 2rem;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    color: #4a2f3b;
+    border-left: 5px solid #ffd166;
+    padding-left: 15px;
 }
 
-/* Links inside main */
-main a {
-  color: #1a73e8;
-  text-decoration: underline;
+p, li {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
 }
 
-main a:hover {
-  color: #0b59c1;
+ul {
+    list-style: none;
+    margin-left: 0;
+    padding-left: 0;
 }
 
-/* Intro paragraph style */
-p.intro {
-  font-style: italic;
-  color: #333;
-  margin-bottom: 25px;
+ul li::before {
+    content: "•";
+    color: #ffd166;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
 }
 
-/* Back to Home link */
-a[href="../"] {
-  display: inline-block;
-  margin-bottom: 15px;
-  font-size: 0.9rem;
-  color: #555;
-  text-decoration: none;
+/* === Links === */
+a {
+    color: #2c1f2b;
+    text-decoration: none;
+    font-weight: 500;
 }
 
-a[href="../"]:hover {
-  text-decoration: underline;
-  color: #0d3b66;
+a:hover {
+    color: #ffd166;
+    text-decoration: underline;
 }
 
-/* Section spacing */
+/* === Sections === */
 section {
-  margin-bottom: 25px;
+    background: #fff;
+    margin: 30px 0;
+    padding: 25px 30px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
-/* Responsive */
-@media (max-width: 600px) {
+section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+/* === Intro paragraph === */
+p.intro {
+    font-size: 1.3rem;
+    font-style: italic;
+    color: #5b3c4a;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+/* === Chithi Issues === */
+.chithi-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.chithi-list li {
+    flex: 1 1 200px;
+    background: #2c1f2b;
+    color: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.chithi-list li:hover {
+    background: #ffd166;
+    color: #2c1f2b;
+    transform: translateY(-5px);
+}
+
+/* === Footer === */
+footer {
+    text-align: center;
+    padding: 30px 0;
+    background: #2c1f2b;
+    color: #fdf6f0;
+    font-size: 0.9rem;
+    margin-top: 50px;
+}
+
+/* === Responsive Design === */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.2rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    nav {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .chithi-list {
+        flex-direction: column;
+    }
+   }@media (max-width: 600px) {
   nav {
     flex-direction: column;
   }
