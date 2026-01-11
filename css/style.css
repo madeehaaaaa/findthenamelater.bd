@@ -1,0 +1,111 @@
+/* =========================
+   AOBD Minimal CSS
+   Clean & readable archive
+========================= */
+
+/* Reset some defaults */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  background-color: #fdfcf9; /* light archival feel */
+  color: #1a1a1a;
+  padding: 20px;
+}
+
+/* Navigation styling */
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 30px;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 10px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #0d3b66; /* calm dark blue */
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+nav a:hover {
+  color: #faa307; /* subtle highlight on hover */
+}
+
+/* Main content styling */
+main h1 {
+  margin-bottom: 20px;
+  font-size: 2rem;
+  color: #0d3b66;
+}
+
+main h2 {
+  margin-top: 25px;
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+  color: #1a1a1a;
+}
+
+main p {
+  margin-bottom: 15px;
+}
+
+main ul {
+  list-style-type: disc;
+  margin-left: 20px;
+  margin-bottom: 15px;
+}
+
+main li {
+  margin-bottom: 5px;
+}
+
+/* Links inside main */
+main a {
+  color: #1a73e8;
+  text-decoration: underline;
+}
+
+main a:hover {
+  color: #0b59c1;
+}
+
+/* Intro paragraph style */
+p.intro {
+  font-style: italic;
+  color: #333;
+  margin-bottom: 25px;
+}
+
+/* Back to Home link */
+a[href="../"] {
+  display: inline-block;
+  margin-bottom: 15px;
+  font-size: 0.9rem;
+  color: #555;
+  text-decoration: none;
+}
+
+a[href="../"]:hover {
+  text-decoration: underline;
+  color: #0d3b66;
+}
+
+/* Section spacing */
+section {
+  margin-bottom: 25px;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  nav {
+    flex-direction: column;
+  }
+}
