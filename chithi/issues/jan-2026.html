@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Chithi - January 2026 | AOBD</title>
+  <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+
+<div id="nav-placeholder"></div>
+<script>
+  fetch("/findthenamelater.bd/includes/nav.html")
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById("nav-placeholder").innerHTML = html;
+    });
+</script>
+
+<main>
+  <h1>Chithi - January 2026</h1>
+
+  <section>
+    <h2>Letter 1</h2>
+    <p>This is the first entry of our January mail club.</p>
+  </section>
+
+  <section>
+    <h2>Letter 2</h2>
+    <p>Another entry, can be text, images, or links.</p>
+  </section>
+
+  <p><a href="../index.html">Back to Chithi</a></p>
+</main>
+
+</body>
+</html>
