@@ -1,38 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <div id="head-placeholder"></div>
-    <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <title>AOBD — Everything About Bangla</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 
-    <script>
-  fetch("/findthenamelater.bd/includes/head.html")
-    .then(res => res.text())
-    .then(html => {
-      document.getElementById("head-placeholder").innerHTML = html;
-    });
-    </script>
-    
 <body>
 
-    <h1>AOBD — Everything About Bangla</h1>
-    <p>
-        AOBD is a living archive of Bangla — its language, history, lost heritage, and regional accents.<br>
-        Here, we explore Shadhi Bhasha, Ancholikota, and the philosophies hidden inside words.
-    </p>
-    <p>
-        This is not a blog. This is an exploration.<br>
-        A digital space for research, reflection, and preservation of our cultural identity.
-    </p>
+<h1>AOBD — Everything About Bangla</h1>
+<p>
+    AOBD is a living archive of Bangla — its language, history, lost heritage, and regional accents.<br>
+    Here, we explore Shadhi Bhasha, Ancholikota, and the philosophies hidden inside words.
+</p>
+<p>
+    This is not a blog. This is an exploration.<br>
+    A digital space for research, reflection, and preservation of our cultural identity.
+</p>
 
-    <div id="nav-placeholder"></div>
-    <script>
-      fetch("includes/nav.html")
-        .then(res => res.text())
-        .then(html => {
-          document.getElementById("nav-placeholder").innerHTML = html;
-        });
-    </script>
-    
+<div id="nav-placeholder"></div>
+<script>
+  fetch("includes/nav.html")
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById("nav-placeholder").innerHTML = html;
+    });
+</script>
+
 </body>
 </html>
