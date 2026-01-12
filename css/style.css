@@ -1,60 +1,55 @@
-/* ==================================
+/* ======================================================
    AOBD — Everything About Bangla
-   Elevated archival edition
-   ================================== */
+   Visual Language: Desi Maximalism, Archival, Timeless
+   ====================================================== */
 
+/* ---------- CSS RESET (soft) ---------- */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* ---------- COLOR PALETTE ---------- */
 :root {
-  --leaf-green: #2e6b4f;
-  --river-blue: #2f5d8a;
-  --mud-brown: #6b4a2d;
+  --ink-black: #1a1a1a;
+  --paper-cream: #fdf8f2;
+  --leaf-green: #2f5d3a;
+  --mud-brown: #6b4f3f;
+  --clay-red: #9c3d2e;
   --sun-marigold: #e0a106;
-  --rice-white: #faf7f2;
-  --ink-black: #1c1c1c;
-  --clay-red: #8c2f2f;
-  --paper-shadow: rgba(0, 0, 0, 0.06);
+  --river-blue: #2c5f7a;
+  --ash-gray: #777;
 }
 
-/* --- Body --- */
+/* ---------- BODY ---------- */
 body {
-  font-family: "Cormorant Garamond", serif;
-  background-color: var(--rice-white);
+  font-family: "Georgia", "Times New Roman", serif;
+  background-color: var(--paper-cream);
   color: var(--ink-black);
   line-height: 1.75;
-  letter-spacing: 0.3px;
-  background-image:
-    radial-gradient(rgba(0,0,0,0.02) 1px, transparent 1px);
-  background-size: 6px 6px;
+  letter-spacing: 0.2px;
 }
 
-/* --- Navigation --- */
+/* ---------- NAVIGATION ---------- */
 nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  padding: 1.5rem 2rem;
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+  background: rgba(253, 248, 242, 0.95);
   position: sticky;
   top: 0;
-  background: linear-gradient(
-    to right,
-    var(--leaf-green),
-    var(--river-blue)
-  );
-  padding: 1rem 2rem;
-  display: flex;
-  gap: 1.6rem;
-  flex-wrap: wrap;
-  z-index: 1000;
-  box-shadow: 0 4px 20px var(--paper-shadow);
+  z-index: 10;
 }
 
 nav a {
-  font-family: "Hind Siliguri", sans-serif;
-  color: #ffffff;
   text-decoration: none;
-  font-size: 0.9rem;
-  letter-spacing: 0.6px;
+  color: var(--ink-black);
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
   position: relative;
 }
 
@@ -63,9 +58,9 @@ nav a::after {
   position: absolute;
   left: 0;
   bottom: -4px;
-  width: 0%;
-  height: 2px;
-  background-color: var(--sun-marigold);
+  width: 0;
+  height: 1px;
+  background: var(--sun-marigold);
   transition: width 0.3s ease;
 }
 
@@ -73,40 +68,146 @@ nav a:hover::after {
   width: 100%;
 }
 
-/* --- Main --- */
+/* ---------- MAIN WRAPPER ---------- */
 main {
   max-width: 880px;
-  margin: 4.5rem auto;
-  padding: 0 1.5rem;
+  margin: 4rem auto;
+  padding: 0 2rem;
+  animation: fadeUp 0.8s ease forwards;
 }
 
-/* --- Headings --- */
+/* ---------- HEADINGS ---------- */
 h1 {
-  font-size: 2.8rem;
-  font-weight: 500;
-  margin-bottom: 1.5rem;
-  color: var(--clay-red);
-  position: relative;
-}
-
-h1::after {
-  content: "❦";
-  display: block;
-  margin-top: 0.6rem;
-  color: var(--sun-marigold);
-  font-size: 1.4rem;
+  font-size: 2.4rem;
+  margin-bottom: 1.2rem;
+  font-weight: normal;
+  letter-spacing: 1px;
 }
 
 h2 {
-  font-size: 1.7rem;
-  font-weight: 500;
-  margin-bottom: 0.8rem;
-  color: var(--leaf-green);
+  font-size: 1.4rem;
+  margin-bottom: 0.6rem;
+  font-weight: normal;
+  color: var(--mud-brown);
 }
 
-/* --- Paragraphs --- */
+/* ---------- PARAGRAPHS ---------- */
 p {
-  margin-bottom: 1.3rem;
+  margin-bottom: 1.2rem;
+  font-size: 1.05rem;
+  color: var(--ink-black);
+}
+
+/* ---------- INTRO PARAGRAPH ---------- */
+.intro {
+  font-style: italic;
+  color: var(--ash-gray);
+  border-left: 3px solid var(--sun-marigold);
+  padding-left: 1rem;
+  margin-bottom: 2.5rem;
+}
+
+/* ---------- SECTIONS ---------- */
+section {
+  margin: 3rem 0;
+  padding-left: 1.2rem;
+  border-left: 2px solid rgba(0,0,0,0.08);
+}
+
+/* Section personalities */
+.section-language { border-left-color: var(--leaf-green); }
+.section-history  { border-left-color: var(--mud-brown); }
+.section-art      { border-left-color: var(--clay-red); }
+.section-music    { border-left-color: var(--river-blue); }
+.section-chithi   { border-left-color: var(--sun-marigold); }
+
+/* ---------- LISTS ---------- */
+ul {
+  margin-top: 1rem;
+  padding-left: 1.2rem;
+}
+
+li {
+  margin-bottom: 0.5rem;
+}
+
+/* ---------- ORNAMENTAL DIVIDER ---------- */
+.divider {
+  text-align: center;
+  margin: 4rem 0;
+  font-size: 1.3rem;
+  color: var(--sun-marigold);
+  letter-spacing: 6px;
+  opacity: 0.85;
+}
+
+.divider::before {
+  content: "❖ ❖ ❖";
+}
+
+/* ---------- ART SLOT (YOUR CANVAS) ---------- */
+.art-slot {
+  margin: 3rem 0;
+  padding: 2rem;
+  background: rgba(255,255,255,0.75);
+  border: 1px dashed var(--mud-brown);
+  position: relative;
+}
+
+.art-slot img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* subtle note */
+.art-slot::after {
+  content: "✦ visual archive ✦";
+  position: absolute;
+  bottom: -12px;
+  right: 12px;
+  font-size: 0.7rem;
+  color: var(--mud-brown);
+  opacity: 0.6;
+}
+
+/* ---------- LINKS ---------- */
+a {
+  color: var(--clay-red);
+}
+
+a:hover {
+  color: var(--sun-marigold);
+}
+
+/* ---------- FOOTNOTE / SMALL TEXT ---------- */
+small {
+  font-size: 0.8rem;
+  color: var(--ash-gray);
+}
+
+/* ---------- ANIMATION ---------- */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 768px) {
+  main {
+    margin: 2.5rem auto;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+}  margin-bottom: 1.3rem;
   font-size: 1.1rem;
 }
 
