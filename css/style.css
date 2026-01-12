@@ -1,110 +1,203 @@
-/* =====================================================
-   AOBD — Style.css
-   Stunning, professional, immersive design for your archive
-===================================================== */
+/* ==================================
+   AOBD — Everything About Bangla
+   Elevated archival edition
+   ================================== */
 
-/* === Reset and base styles === */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
+:root {
+  --leaf-green: #2e6b4f;
+  --river-blue: #2f5d8a;
+  --mud-brown: #6b4a2d;
+  --sun-marigold: #e0a106;
+  --rice-white: #faf7f2;
+  --ink-black: #1c1c1c;
+  --clay-red: #8c2f2f;
+  --paper-shadow: rgba(0, 0, 0, 0.06);
+}
+
+/* --- Body --- */
 body {
-    font-family: 'Poppins', sans-serif;
-    background: #fdf6f0; /* warm subtle background */
-    color: #333;
-    line-height: 1.7;
-    scroll-behavior: smooth;
+  font-family: "Cormorant Garamond", serif;
+  background-color: var(--rice-white);
+  color: var(--ink-black);
+  line-height: 1.75;
+  letter-spacing: 0.3px;
+  background-image:
+    radial-gradient(rgba(0,0,0,0.02) 1px, transparent 1px);
+  background-size: 6px 6px;
 }
 
-/* === Navigation === */
+/* --- Navigation --- */
 nav {
-    background: #2c1f2b; /* deep purple-burgundy */
-    display: flex;
-    justify-content: center;
-    padding: 15px 0;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+  position: sticky;
+  top: 0;
+  background: linear-gradient(
+    to right,
+    var(--leaf-green),
+    var(--river-blue)
+  );
+  padding: 1rem 2rem;
+  display: flex;
+  gap: 1.6rem;
+  flex-wrap: wrap;
+  z-index: 1000;
+  box-shadow: 0 4px 20px var(--paper-shadow);
 }
 
 nav a {
-    color: #fdf6f0;
-    margin: 0 20px;
-    text-decoration: none;
-    font-weight: 600;
-    position: relative;
-    transition: 0.3s;
-}
-
-nav a:hover {
-    color: #ffd166; /* golden hover */
+  font-family: "Hind Siliguri", sans-serif;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 0.9rem;
+  letter-spacing: 0.6px;
+  position: relative;
 }
 
 nav a::after {
-    content: '';
-    display: block;
-    height: 2px;
-    width: 0;
-    background: #ffd166;
-    transition: 0.3s;
-    position: absolute;
-    bottom: -5px;
-    left: 0;
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0%;
+  height: 2px;
+  background-color: var(--sun-marigold);
+  transition: width 0.3s ease;
 }
 
 nav a:hover::after {
-    width: 100%;
+  width: 100%;
 }
 
-/* === Main content === */
+/* --- Main --- */
 main {
-    max-width: 1100px;
-    margin: 50px auto;
-    padding: 0 20px;
+  max-width: 880px;
+  margin: 4.5rem auto;
+  padding: 0 1.5rem;
 }
 
+/* --- Headings --- */
 h1 {
-    font-size: 3rem;
-    color: #2c1f2b;
-    text-align: center;
-    margin-bottom: 20px;
-    letter-spacing: 1px;
+  font-size: 2.8rem;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+  color: var(--clay-red);
+  position: relative;
+}
+
+h1::after {
+  content: "❦";
+  display: block;
+  margin-top: 0.6rem;
+  color: var(--sun-marigold);
+  font-size: 1.4rem;
 }
 
 h2 {
-    font-size: 2rem;
-    margin-top: 30px;
-    margin-bottom: 15px;
-    color: #4a2f3b;
-    border-left: 5px solid #ffd166;
-    padding-left: 15px;
+  font-size: 1.7rem;
+  font-weight: 500;
+  margin-bottom: 0.8rem;
+  color: var(--leaf-green);
 }
 
-p, li {
-    font-size: 1.1rem;
-    margin-bottom: 15px;
+/* --- Paragraphs --- */
+p {
+  margin-bottom: 1.3rem;
+  font-size: 1.1rem;
 }
 
+/* --- Intro --- */
+.intro {
+  font-style: italic;
+  color: var(--mud-brown);
+  border-left: 4px solid var(--sun-marigold);
+  padding-left: 1.2rem;
+  margin-bottom: 2.5rem;
+}
+
+/* --- Sections --- */
+section {
+  margin-bottom: 3.5rem;
+  padding-bottom: 2rem;
+  position: relative;
+}
+
+section::after {
+  content: "— ❖ —";
+  display: block;
+  text-align: center;
+  margin-top: 2.5rem;
+  color: var(--sun-marigold);
+  font-size: 0.9rem;
+}
+
+/* --- Lists --- */
 ul {
-    list-style: none;
-    margin-left: 0;
-    padding-left: 0;
+  list-style: none;
+}
+
+ul li {
+  margin-bottom: 0.7rem;
+  padding-left: 1.3rem;
+  position: relative;
 }
 
 ul li::before {
-    content: "•";
-    color: #ffd166;
-    display: inline-block;
-    width: 1em;
-    margin-left: -1em;
+  content: "✦";
+  position: absolute;
+  left: 0;
+  top: 3px;
+  color: var(--sun-marigold);
+  font-size: 0.7rem;
 }
 
-/* === Links === */
+/* --- Links --- */
 a {
-    color: #2c1f2b;
+  color: var(--river-blue);
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* --- Chithi (handwritten archive feel) --- */
+.chithi-entry {
+  background: #fffdf7;
+  padding: 2rem;
+  margin-bottom: 2.5rem;
+  border: 1px solid rgba(0,0,0,0.08);
+  box-shadow: 0 10px 25px var(--paper-shadow);
+  position: relative;
+}
+
+.chithi-entry::before {
+  content: "✉";
+  position: absolute;
+  top: -14px;
+  left: 20px;
+  background: var(--rice-white);
+  padding: 0 6px;
+  color: var(--clay-red);
+}
+
+/* --- Responsive --- */
+@media (max-width: 600px) {
+  h1 {
+    font-size: 2.1rem;
+  }
+
+  main {
+    margin: 3rem auto;
+  }
+
+  nav {
+    justify-content: center;
+  }
+}    color: #2c1f2b;
     text-decoration: none;
     font-weight: 500;
 }
