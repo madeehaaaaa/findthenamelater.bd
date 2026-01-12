@@ -3,6 +3,15 @@
 <head>
   <div id="head-placeholder"></div>
 </head>
+
+  <script>
+  fetch("/findthenamelater.bd/includes/head.html")
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById("head-placeholder").innerHTML = html;
+    });
+  </script>
+  
 <body>
 
 <div id="nav-placeholder"></div>
