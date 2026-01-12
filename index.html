@@ -1,11 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AOBD — Everything About Bangla</title>
+  <div id="head-placeholder"></div>
     <link rel="stylesheet" href="css/style.css">
 </head>
+
+    <script>
+  fetch("/findthenamelater.bd/includes/head.html")
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById("head-placeholder").innerHTML = html;
+    });
+    </script>
+    
 <body>
 
     <h1>AOBD — Everything About Bangla</h1>
