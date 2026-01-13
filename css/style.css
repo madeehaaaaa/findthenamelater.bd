@@ -1,110 +1,228 @@
-/* ======================================================
-   AOBD — Everything About Bangla
-   Visual Language: Desi Maximalism, Archival, Timeless
-   ====================================================== */
+/* ===============================
+   AOBD — Bengali Maximal Archive
+   Timeless • Textured • Desi
+================================ */
 
-/* ---------- CSS RESET (soft) ---------- */
+/* GOOGLE FONTS (dramatic, old, print-like) */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Libre+Baskerville:ital,wght@0,400;1,400&display=swap');
+
+/* ---------- COLOR SYSTEM ---------- */
+:root {
+  /* base */
+  --black: #0e0e0e;
+  --off-white: #fdfbf7;
+  --warm-paper: #f4efe4;
+
+  /* rickshaw core */
+  --rickshaw-red: #b11226;
+  --deep-maroon: #6a0f1f;
+
+  /* nature */
+  --leaf-green: #2e6f4e;
+  --betel-green: #4f8a5b;
+
+  /* water */
+  --river-blue: #4a7c8c;
+
+  /* metals */
+  --golden: #c9a24d;
+  --aged-gold: #a8832c;
+  --silver: #bfc3c6;
+
+  /* earth */
+  --dusty-ochre: #d1a054;
+  --clay: #b97a56;
+  --brick: #8c3b2e;
+}
+
+/* ---------- GLOBAL RESET ---------- */
 * {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
 }
 
-/* ---------- COLOR PALETTE ---------- */
-:root {
-  --ink-black: #1a1a1a;
-  --paper-cream: #fdf8f2;
-  --leaf-green: #2f5d3a;
-  --mud-brown: #6b4f3f;
-  --clay-red: #9c3d2e;
-  --sun-marigold: #e0a106;
-  --river-blue: #2c5f7a;
-  --ash-gray: #777;
+html {
+  scroll-behavior: smooth;
 }
 
-/* ---------- BODY ---------- */
 body {
-  font-family: "Georgia", "Times New Roman", serif;
-  background-color: var(--paper-cream);
-  color: var(--ink-black);
-  line-height: 1.75;
-  letter-spacing: 0.2px;
+  margin: 0;
+  background: var(--warm-paper);
+  color: var(--black);
+  font-family: "Libre Baskerville", serif;
+  line-height: 1.85;
+  font-size: 16px;
+}
+
+/* ---------- OUTER ARCHIVE FRAME ---------- */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 18px;
+  border: 2px solid var(--aged-gold);
+  pointer-events: none;
+  z-index: 999;
 }
 
 /* ---------- NAVIGATION ---------- */
 nav {
   display: flex;
   flex-wrap: wrap;
-  gap: 1.5rem;
-  padding: 1.5rem 2rem;
-  border-bottom: 1px solid rgba(0,0,0,0.08);
-  background: rgba(253, 248, 242, 0.95);
-  position: sticky;
-  top: 0;
-  z-index: 10;
+  gap: 22px;
+  padding: 24px 40px;
+  background: var(--off-white);
+  border-bottom: 5px solid var(--rickshaw-red);
 }
 
 nav a {
-  text-decoration: none;
-  color: var(--ink-black);
-  font-size: 0.95rem;
+  font-family: "Playfair Display", serif;
+  font-size: 0.9rem;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  letter-spacing: 1px;
+  color: var(--deep-maroon);
+  text-decoration: none;
+  padding-bottom: 4px;
+  border-bottom: 2px solid transparent;
+}
+
+nav a:hover {
+  border-bottom-color: var(--golden);
+  color: var(--rickshaw-red);
+}
+
+/* ---------- MAIN CONTENT FRAME ---------- */
+main {
+  max-width: 880px;
+  margin: 90px auto;
+  padding: 48px 52px;
+  background: var(--off-white);
+  border-left: 10px solid var(--rickshaw-red);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.08);
   position: relative;
 }
 
-nav a::after {
+/* subtle inner texture */
+main::before {
   content: "";
   position: absolute;
-  left: 0;
-  bottom: -4px;
-  width: 0;
-  height: 1px;
-  background: var(--sun-marigold);
-  transition: width 0.3s ease;
-}
-
-nav a:hover::after {
-  width: 100%;
-}
-
-/* ---------- MAIN WRAPPER ---------- */
-main {
-  max-width: 880px;
-  margin: 4rem auto;
-  padding: 0 2rem;
-  animation: fadeUp 0.8s ease forwards;
+  inset: 0;
+  background-image: radial-gradient(rgba(0,0,0,0.03) 1px, transparent 1px);
+  background-size: 6px 6px;
+  pointer-events: none;
 }
 
 /* ---------- HEADINGS ---------- */
 h1 {
-  font-size: 2.4rem;
-  margin-bottom: 1.2rem;
-  font-weight: normal;
-  letter-spacing: 1px;
+  font-family: "Playfair Display", serif;
+  font-size: 3.1rem;
+  color: var(--deep-maroon);
+  margin: 0 0 20px 0;
+  position: relative;
+}
+
+h1::after {
+  content: "";
+  display: block;
+  width: 140px;
+  height: 3px;
+  background: linear-gradient(
+    to right,
+    var(--rickshaw-red),
+    var(--golden)
+  );
+  margin-top: 12px;
 }
 
 h2 {
-  font-size: 1.4rem;
-  margin-bottom: 0.6rem;
-  font-weight: normal;
-  color: var(--mud-brown);
+  font-family: "Playfair Display", serif;
+  font-size: 1.6rem;
+  color: var(--rickshaw-red);
+  margin-top: 60px;
 }
 
-/* ---------- PARAGRAPHS ---------- */
+h3 {
+  color: var(--brick);
+  margin-top: 40px;
+}
+
+/* ---------- TEXT ---------- */
 p {
-  margin-bottom: 1.2rem;
+  margin: 18px 0;
   font-size: 1.05rem;
-  color: var(--ink-black);
 }
 
-/* ---------- INTRO PARAGRAPH ---------- */
+/* intro paragraph style */
 .intro {
   font-style: italic;
-  color: var(--ash-gray);
-  border-left: 3px solid var(--sun-marigold);
-  padding-left: 1rem;
-  margin-bottom: 2.5rem;
+  color: #3a3a3a;
+  border-left: 4px solid var(--river-blue);
+  padding-left: 18px;
+}
+
+/* ---------- LINKS ---------- */
+a {
+  color: var(--leaf-green);
+  text-decoration: none;
+  border-bottom: 2px dashed var(--dusty-ochre);
+}
+
+a:hover {
+  color: var(--rickshaw-red);
+  border-bottom-color: var(--golden);
+}
+
+/* ---------- LISTS ---------- */
+ul {
+  padding-left: 20px;
+}
+
+li {
+  margin: 10px 0;
+}
+
+/* ---------- SIDE NOTES / POETIC INSERTS ---------- */
+.note {
+  margin: 40px 0;
+  padding: 18px 22px;
+  background: #faf7f1;
+  border-left: 6px solid var(--river-blue);
+  font-size: 0.95rem;
+  color: var(--river-blue);
+  font-style: italic;
+}
+
+/* ---------- QUOTE STYLE ---------- */
+blockquote {
+  margin: 50px 0;
+  padding: 30px;
+  background: #fff7ec;
+  border-top: 4px solid var(--golden);
+  border-bottom: 4px solid var(--golden);
+  font-style: italic;
+}
+
+/* ---------- FOOTER FEEL ---------- */
+footer {
+  text-align: center;
+  margin: 80px 0;
+  color: var(--clay);
+  font-size: 0.9rem;
+}
+
+/* ---------- RESPONSIVE (still not modern) ---------- */
+@media (max-width: 768px) {
+  main {
+    margin: 60px 20px;
+    padding: 30px;
+  }
+
+  h1 {
+    font-size: 2.4rem;
+  }
+
+  nav {
+    gap: 14px;
+  }
+}  margin-bottom: 2.5rem;
 }
 
 /* ---------- SECTIONS ---------- */
