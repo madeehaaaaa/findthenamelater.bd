@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AOBD Radio</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div id="nav-placeholder"></div>
+<script>
+  fetch("includes/nav.html")
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById("nav-placeholder").innerHTML = html;
+    });
+</script>
+
+<main class="radio">
+
+  <section class="radio-intro">
+    <h1>AOBD Radio</h1>
+    <p>This is not a station.<br>This is a listening room for Bangla.</p>
+  </section>
+
+  <section class="now-playing">
+    <h2>Now Playing</h2>
+    <p>Night Letter — Voice & Silence</p>
+    <audio controls>
+      <source src="audio/night-01.mp3" type="audio/mpeg">
+    </audio>
+  </section>
+
+  <section class="programs">
+    <h2>Programs</h2>
+
+    <div class="program-card">
+      <h3>🌙 Night Letters</h3>
+      <p>Stories, whispers, and Bangla after midnight.</p>
+    </div>
+
+    <div class="program-card">
+      <h3>🌾 Folk & Forgotten</h3>
+      <p>Words and sounds that survived through people.</p>
+    </div>
+
+    <div class="program-card">
+      <h3>🌊 Sound of Bangla</h3>
+      <p>Rivers, rain, streets, breath.</p>
+    </div>
+  </section>
+
+  <section class="archive">
+    <h2>Archive</h2>
+    <ul>
+      <li>Night Letter 01 — 2:14</li>
+      <li>River Sound — 1:02</li>
+    </ul>
+  </section>
+
+</main>
+
+</body>
+</html>
