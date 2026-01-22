@@ -1,110 +1,145 @@
-/* =========================
-   AOBD — Black & White Core
-   ========================= */
-
-/* ---- CSS RESET ---- */
+/* ------------------------------
+   GLOBAL RESET
+--------------------------------*/
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* ---- ROOT VARIABLES (future-proof) ---- */
+/* ------------------------------
+   ROOT COLORS (easy to edit later)
+--------------------------------*/
 :root {
-  --bg: #000000;
-  --text-main: #f5f5f5;
-  --text-muted: #bdbdbd;
-  --border-soft: #2a2a2a;
-  --section-gap: 6rem;
+  --bg: #ffffff;
+  --text: #0a0a0a;
+  --muted: #555555;
+  --border: #dddddd;
 }
 
-/* ---- BODY ---- */
+/* ------------------------------
+   BODY
+--------------------------------*/
 body {
-  background-color: var(--bg);
-  color: var(--text-main);
-  font-family: "Georgia", "Times New Roman", serif; /* dramatic, literary */
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Georgia", "Times New Roman", serif;
   line-height: 1.8;
   letter-spacing: 0.02em;
-  padding: 3rem 2rem;
+  padding: 3rem 1.5rem;
 }
 
-/* ---- MAIN WRAPPER ---- */
-main {
-  max-width: 900px;
-  margin: 0 auto;
-}
-
-/* ---- HEADINGS ---- */
-h1, h2, h3 {
-  font-weight: 400;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
-h1 {
-  font-size: 3rem;
-  margin-bottom: 2rem;
-}
-
-h2 {
-  font-size: 1.6rem;
-  margin-bottom: 1.5rem;
-}
-
-h3 {
-  font-size: 1.2rem;
-  margin-bottom: 1rem;
-}
-
-/* ---- PARAGRAPHS ---- */
-p {
-  color: var(--text-muted);
-  font-size: 1.05rem;
-  margin-bottom: 1.5rem;
-  max-width: 720px;
-}
-
-/* ---- SECTION STYLE ---- */
-section {
-  margin-bottom: var(--section-gap);
-  padding-top: 2rem;
-  border-top: 1px solid var(--border-soft);
-}
-
-/* ---- SUBTLE SEPARATOR LINE ---- */
-.hr-soft {
-  width: 60px;
-  height: 1px;
-  background: var(--text-muted);
-  margin: 2rem 0;
-  opacity: 0.5;
-}
-
-/* ---- NAVIGATION (minimal, archival) ---- */
+/* ------------------------------
+   NAV (simple, archival)
+--------------------------------*/
 nav {
-  margin-bottom: 5rem;
+  margin-bottom: 4rem;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 1rem;
 }
 
 nav a {
-  color: var(--text-muted);
   text-decoration: none;
-  margin-right: 2rem;
-  font-size: 0.9rem;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
+  color: var(--text);
+  margin-right: 1.5rem;
+  font-size: 0.95rem;
 }
 
 nav a:hover {
-  color: var(--text-main);
+  text-decoration: underline;
 }
 
-/* ---- QUOTE / POETIC BLOCK ---- */
-blockquote {
-  font-style: italic;
-  color: var(--text-main);
-  border-left: 2px solid var(--border-soft);
-  padding-left: 1.5rem;
-  margin: 3rem 0;
+/* ------------------------------
+   LETTER LAYOUT
+--------------------------------*/
+.letter {
+  max-width: 720px;
+  margin: auto;
+}
+
+/* Paragraph blocks */
+.letter-block {
+  margin-bottom: 3rem;
+}
+
+.letter-block p {
+  font-size: 1.05rem;
+  color: var(--text);
+}
+
+/* ------------------------------
+   CLICKABLE OBJECTS
+--------------------------------*/
+.object-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+
+  margin: 2.5rem 0;
+  text-decoration: none;
+  color: var(--text);
+
+  opacity: 0.85;
+  transition: opacity 0.2s ease;
+}
+
+.object-link:hover {
+  opacity: 1;
+}
+
+/* Object image */
+.object-link img {
+  width: 36px;
+  height: auto;
+  filter: grayscale(100%);
+}
+
+/* Object label */
+.object-link span {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+/* ------------------------------
+   HEADINGS (quiet, serious)
+--------------------------------*/
+h1, h2, h3 {
+  font-weight: normal;
+  margin-bottom: 1.2rem;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.4rem;
+}
+
+/* ------------------------------
+   LINKS IN TEXT
+--------------------------------*/
+a {
+  color: var(--text);
+}
+
+a:hover {
+  color: var(--muted);
+}
+
+/* ------------------------------
+   SMALL SCREENS
+--------------------------------*/
+@media (max-width: 600px) {
+  body {
+    padding: 2rem 1rem;
+  }
+
+  .letter {
+    max-width: 100%;
+  }
+}  margin: 3rem 0;
 }
 
 /* ---- IMAGE PLACEHOLDER STYLE (for later art) ---- */
