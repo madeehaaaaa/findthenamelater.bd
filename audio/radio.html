@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Radio | AOBD</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<div id="nav-placeholder"></div>
+<script>
+  fetch("includes/nav.html")
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById("nav-placeholder").innerHTML = html;
+    });
+</script>
+
+<main class="radio">
+
+  <!-- LIVE RADIO -->
+  <section class="radio-live">
+    <h1>Live Now</h1>
+    <p class="radio-note">
+      What is being spoken at this moment.
+    </p>
+
+    <audio controls autoplay>
+      <source src="audio/live/live.mp3" type="audio/mpeg">
+      Your browser does not support audio.
+    </audio>
+  </section>
+
+  <!-- ARCHIVE -->
+  <section class="radio-archive">
+    <h2>Saved Voices</h2>
+
+    <div class="archive-item">
+      <p>Folk Stories — January 2026</p>
+      <audio controls>
+        <source src="audio/archive/2026-01-folk-night.mp3" type="audio/mpeg">
+      </audio>
+    </div>
+
+    <div class="archive-item">
+      <p>Audio Natok — January 2026</p>
+      <audio controls>
+        <source src="audio/archive/2026-01-natok.mp3" type="audio/mpeg">
+      </audio>
+    </div>
+
+    <div class="archive-item">
+      <p>Teen Debate — February 2026</p>
+      <audio controls>
+        <source src="audio/archive/2026-02-debate.mp3" type="audio/mpeg">
+      </audio>
+    </div>
+
+  </section>
+
+</main>
+
+</body>
+</html>
