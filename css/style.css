@@ -1,110 +1,143 @@
-/* ===============================
-   AOBD — Bengali Maximal Archive
-   Timeless • Textured • Desi
-================================ */
+/* =========================
+   AOBD — Black & White Core
+   ========================= */
 
-/* GOOGLE FONTS (dramatic, old, print-like) */
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Libre+Baskerville:ital,wght@0,400;1,400&display=swap');
-
-/* ---------- COLOR SYSTEM ---------- */
-:root {
-  /* base */
-  --black: #0e0e0e;
-  --off-white: #fdfbf7;
-  --warm-paper: #f4efe4;
-
-  /* rickshaw core */
-  --rickshaw-red: #b11226;
-  --deep-maroon: #6a0f1f;
-
-  /* nature */
-  --leaf-green: #2e6f4e;
-  --betel-green: #4f8a5b;
-
-  /* water */
-  --river-blue: #4a7c8c;
-
-  /* metals */
-  --golden: #c9a24d;
-  --aged-gold: #a8832c;
-  --silver: #bfc3c6;
-
-  /* earth */
-  --dusty-ochre: #d1a054;
-  --clay: #b97a56;
-  --brick: #8c3b2e;
-}
-
-/* ---------- GLOBAL RESET ---------- */
+/* ---- CSS RESET ---- */
 * {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
-html {
-  scroll-behavior: smooth;
+/* ---- ROOT VARIABLES (future-proof) ---- */
+:root {
+  --bg: #000000;
+  --text-main: #f5f5f5;
+  --text-muted: #bdbdbd;
+  --border-soft: #2a2a2a;
+  --section-gap: 6rem;
 }
 
+/* ---- BODY ---- */
 body {
-  margin: 0;
-  background: var(--warm-paper);
-  color: var(--black);
-  font-family: "Libre Baskerville", serif;
-  line-height: 1.85;
-  font-size: 16px;
+  background-color: var(--bg);
+  color: var(--text-main);
+  font-family: "Georgia", "Times New Roman", serif; /* dramatic, literary */
+  line-height: 1.8;
+  letter-spacing: 0.02em;
+  padding: 3rem 2rem;
 }
 
-/* ---------- OUTER ARCHIVE FRAME ---------- */
-body::before {
-  content: "";
-  position: fixed;
-  inset: 18px;
-  border: 2px solid var(--aged-gold);
-  pointer-events: none;
-  z-index: 999;
+/* ---- MAIN WRAPPER ---- */
+main {
+  max-width: 900px;
+  margin: 0 auto;
 }
 
-/* ---------- NAVIGATION ---------- */
+/* ---- HEADINGS ---- */
+h1, h2, h3 {
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+h1 {
+  font-size: 3rem;
+  margin-bottom: 2rem;
+}
+
+h2 {
+  font-size: 1.6rem;
+  margin-bottom: 1.5rem;
+}
+
+h3 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+/* ---- PARAGRAPHS ---- */
+p {
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  margin-bottom: 1.5rem;
+  max-width: 720px;
+}
+
+/* ---- SECTION STYLE ---- */
+section {
+  margin-bottom: var(--section-gap);
+  padding-top: 2rem;
+  border-top: 1px solid var(--border-soft);
+}
+
+/* ---- SUBTLE SEPARATOR LINE ---- */
+.hr-soft {
+  width: 60px;
+  height: 1px;
+  background: var(--text-muted);
+  margin: 2rem 0;
+  opacity: 0.5;
+}
+
+/* ---- NAVIGATION (minimal, archival) ---- */
 nav {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 22px;
-  padding: 24px 40px;
-  background: var(--off-white);
-  border-bottom: 5px solid var(--rickshaw-red);
+  margin-bottom: 5rem;
 }
 
 nav a {
-  font-family: "Playfair Display", serif;
-  font-size: 0.9rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--deep-maroon);
+  color: var(--text-muted);
   text-decoration: none;
-  padding-bottom: 4px;
-  border-bottom: 2px solid transparent;
+  margin-right: 2rem;
+  font-size: 0.9rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
 }
 
 nav a:hover {
-  border-bottom-color: var(--golden);
-  color: var(--rickshaw-red);
+  color: var(--text-main);
 }
 
-/* ---------- MAIN CONTENT FRAME ---------- */
-main {
-  max-width: 880px;
-  margin: 90px auto;
-  padding: 48px 52px;
-  background: var(--off-white);
-  border-left: 10px solid var(--rickshaw-red);
-  box-shadow: 0 18px 40px rgba(0,0,0,0.08);
-  position: relative;
+/* ---- QUOTE / POETIC BLOCK ---- */
+blockquote {
+  font-style: italic;
+  color: var(--text-main);
+  border-left: 2px solid var(--border-soft);
+  padding-left: 1.5rem;
+  margin: 3rem 0;
 }
 
-/* subtle inner texture */
-main::before {
-  content: "";
-  position: absolute;
-  inset: 0;
+/* ---- IMAGE PLACEHOLDER STYLE (for later art) ---- */
+.figure {
+  margin: 3rem 0;
+  opacity: 0.85;
+}
+
+.figure img {
+  width: 100%;
+  display: block;
+  filter: grayscale(100%);
+}
+
+/* ---- FOOTER ---- */
+footer {
+  margin-top: 6rem;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  border-top: 1px solid var(--border-soft);
+  padding-top: 2rem;
+}
+
+/* ---- RESPONSIVE ---- */
+@media (max-width: 768px) {
+  body {
+    padding: 2rem 1.5rem;
+  }
+
+  h1 {
+    font-size: 2.2rem;
+  }
+}  inset: 0;
   background-image: radial-gradient(rgba(0,0,0,0.03) 1px, transparent 1px);
   background-size: 6px 6px;
   pointer-events: none;
