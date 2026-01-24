@@ -2,43 +2,76 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>AOBD Radio — Live</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AOBD Radio</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
 
-<h1 style="color:white;">RADIO PAGE WORKS</h1>
-<p style="color:white;">If you see this, the page is loading.</p>
+<!-- Nav -->
+<div id="nav-placeholder"></div>
+<script>
+  fetch("includes/nav.html")
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById("nav-placeholder").innerHTML = html;
+    });
 </script>
 
 <main class="radio">
 
-  <section class="radio-live">
-
-    <p class="radio-onair">● ON AIR</p>
-
-    <h1 class="radio-title">AOBD Radio</h1>
-
-    <p class="radio-description">
-      A quiet frequency.<br>
-      Stories, folk memory, and sound carried by breath.
+  <!-- Bangla intro text -->
+  <section class="radio-intro">
+    <p>
+      “শোনো, নদীর গীতি, বনের হাওয়া, শস্যের ফিসফিসানি — এ হলো বাংলার গান। 
+      আমরা বাজাই হৃদয়ের সুর, ধ্বনির রঙে।”
     </p>
+  </section>
 
-    <!-- NOW PLAYING -->
-    <div class="now-playing">
-      <span class="label">NOW PLAYING</span>
-      <p class="track">
-        Folk night transmission — River songs & distant voices
-      </p>
-    </div>
+  <!-- Icon + live / offline toggle -->
+  <section class="live-section">
+    <img src="images/radio-icon.png" alt="AOBD Radio Icon" class="radio-icon">
+    <p class="broadcast-status live">LIVE NOW • Dhaka • 9:00 PM</p>
+    <!-- Toggle for offline -->
+    <p class="broadcast-status offline" style="display:none;">OFF AIR • Check back later</p>
+  </section>
 
-    <!-- AUDIO PLAYER -->
+  <!-- Programs -->
+  <section class="radio-programs">
+    <h2>Today's Programs</h2>
+    <ul>
+      <li><span class="time">6:00 AM</span> Morning Folk Songs</li>
+      <li><span class="time">12:00 PM</span> River Tales & Stories</li>
+      <li><span class="time">6:00 PM</span> Evening Ghazals & Poems</li>
+      <li><span class="time">9:00 PM</span> Nighttime Bangla Classics</li>
+    </ul>
+  </section>
+
+  <!-- Live Audio Player -->
+  <section class="live-audio">
     <audio controls>
       <source src="audio/live.mp3" type="audio/mpeg">
-      Your browser does not support audio.
+      Your browser does not support the audio element.
     </audio>
+  </section>
 
+  <!-- Archive -->
+  <section class="radio-archive">
+    <h2>Previous Broadcasts</h2>
+    <ul class="archive-list">
+      <li>
+        <span class="date">Jan 12, 2026</span>
+        <audio controls>
+          <source src="audio/river-songs.mp3" type="audio/mpeg">
+        </audio>
+      </li>
+      <li>
+        <span class="date">Jan 05, 2026</span>
+        <audio controls>
+          <source src="audio/folk-night.mp3" type="audio/mpeg">
+        </audio>
+      </li>
+    </ul>
   </section>
 
 </main>
