@@ -20,6 +20,35 @@ body {
   overflow-x: hidden;
 }
 
+/* HOMEPAGE HERO SECTION */
+.home-intro {
+  height: 100vh; /* full screen height */
+  background-image: url('../images/your-image.jpg'); /* path to your image */
+  background-size: cover;        /* image covers the section */
+  background-position: center;   /* center the image */
+  background-repeat: no-repeat;  /* no tiling */
+  display: flex;                 /* for centering text */
+  align-items: center;           /* vertically center */
+  justify-content: center;       /* horizontally center */
+  position: relative;
+  color: #fff;                   /* text color on top of image */
+  text-align: center;
+}
+
+/* HERO TEXT */
+.home-intro .intro-text h1 {
+  font-size: 5rem;
+  font-family: 'Georgia', serif;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.7); /* makes text readable on image */
+}
+
+.home-intro .intro-text h2 {
+  font-size: 3rem;
+  font-family: 'Georgia', serif;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+  margin-top: 0.5rem;
+}
+
 /* MAIN CONTAINER */
 main {
   max-width: 720px;
