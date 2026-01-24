@@ -6,6 +6,32 @@
   <title>AOBD Radio</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
+  
+  <script>
+  // Select the live and offline status elements
+  const liveStatus = document.querySelector('.broadcast-status.live');
+  const offlineStatus = document.querySelector('.broadcast-status.offline');
+
+  // Try to load the live audio file
+  fetch('audio/live.mp3', { method: 'HEAD' })
+    .then(res => {
+      if(res.ok) {
+        // File exists, show LIVE
+        liveStatus.style.display = 'block';
+        offlineStatus.style.display = 'none';
+      } else {
+        // File missing, show OFF AIR
+        liveStatus.style.display = 'none';
+        offlineStatus.style.display = 'block';
+      }
+    })
+    .catch(err => {
+      // Any error: show OFF AIR
+      liveStatus.style.display = 'none';
+      offlineStatus.style.display = 'block';
+    });
+  </script>
+  
 <body>
 
 <!-- Nav -->
