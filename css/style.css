@@ -130,207 +130,7 @@ nav a:hover {
   opacity: 1;
 }
 
-/* =========================================
-   RADIO PAGE
-   ========================================= */
-
-.radio {
-  max-width: 720px;
-  margin: 0 auto;
-  padding: 4rem 1.5rem;
-}
-
-.radio-live {
-  border-bottom: 1px solid rgba(255,255,255,0.3);
-  padding-bottom: 3rem;
-  margin-bottom: 4rem;
-}
-
-.radio-live h1 {
-  font-size: 2rem;
-}
-
-.radio-note {
-  font-style: italic;
-  font-size: 0.95rem;
-  opacity: 0.6;
-  margin-bottom: 1.5rem;
-}
-
-/* AUDIO PLAYER */
-audio {
-  width: 100%;
-  filter: grayscale(100%);
-}
-
-/* ARCHIVE */
-.radio-archive h2 {
-  font-size: 1.5rem;
-  margin-bottom: 2.5rem;
-}
-
-.archive-item {
-  margin-bottom: 3rem;
-}
-
-.archive-item p {
-  font-size: 0.9rem;
-  opacity: 0.7;
-  margin-bottom: 0.6rem;
-}
-
-/* =========================================
-   FOOTER (OPTIONAL LATER)
-   ========================================= */
-
-footer {
-  max-width: 720px;
-  margin: 4rem auto;
-  padding: 2rem 1.5rem;
-  font-size: 0.75rem;
-  opacity: 0.5;
-  text-align: center;
-}/* ------------------------------
-   HEADINGS (quiet, serious)
---------------------------------*/
-h1, h2, h3 {
-  font-weight: normal;
-  margin-bottom: 1.2rem;
-}
-
-h1 {
-  font-size: 2rem;
-}
-
-h2 {
-  font-size: 1.4rem;
-}
-
-/* ------------------------------
-   LINKS IN TEXT
---------------------------------*/
-a {
-  color: var(--text);
-}
-
-a:hover {
-  color: var(--muted);
-}
-
-/* ------------------------------
-   SMALL SCREENS
---------------------------------*/
-@media (max-width: 600px) {
-  body {
-    padding: 2rem 1rem;
-  }
-
-  .letter {
-    max-width: 100%;
-  }
-}  margin: 3rem 0;
-}
-
-/* ---- IMAGE PLACEHOLDER STYLE (for later art) ---- */
-.figure {
-  margin: 3rem 0;
-  opacity: 0.85;
-}
-
-.figure img {
-  width: 100%;
-  display: block;
-  filter: grayscale(100%);
-}
-
-/* ---- FOOTER ---- */
-footer {
-  margin-top: 6rem;
-  font-size: 0.8rem;
-  color: var(--text-muted);
-  border-top: 1px solid var(--border-soft);
-  padding-top: 2rem;
-}
-
-/* ---- RESPONSIVE ---- */
-@media (max-width: 768px) {
-  body {
-    padding: 2rem 1.5rem;
-  }
-
-  h1 {
-    font-size: 2.2rem;
-  }
-}  inset: 0;
-  background-image: radial-gradient(rgba(0,0,0,0.03) 1px, transparent 1px);
-  background-size: 6px 6px;
-  pointer-events: none;
-}
-
-/* ---------- HEADINGS ---------- */
-h1 {
-  font-family: "Playfair Display", serif;
-  font-size: 3.1rem;
-  color: var(--deep-maroon);
-  margin: 0 0 20px 0;
-  position: relative;
-}
-
-h1::after {
-  content: "";
-  display: block;
-  width: 140px;
-  height: 3px;
-  background: linear-gradient(
-    to right,
-    var(--rickshaw-red),
-    var(--golden)
-  );
-  margin-top: 12px;
-}
-
-h2 {
-  font-family: "Playfair Display", serif;
-  font-size: 1.6rem;
-  color: var(--rickshaw-red);
-  margin-top: 60px;
-}
-
-h3 {
-  color: var(--brick);
-  margin-top: 40px;
-}
-
-/* ---------- TEXT ---------- */
-p {
-  margin: 18px 0;
-  font-size: 1.05rem;
-}
-
-/* intro paragraph style */
-.intro {
-  font-style: italic;
-  color: #3a3a3a;
-  border-left: 4px solid var(--river-blue);
-  padding-left: 18px;
-}
-
-/* ---------- LINKS ---------- */
-a {
-  color: var(--leaf-green);
-  text-decoration: none;
-  border-bottom: 2px dashed var(--dusty-ochre);
-}
-
-a:hover {
-  color: var(--rickshaw-red);
-  border-bottom-color: var(--golden);
-}
-
-/* ---------- LISTS ---------- */
-ul {
-  padding-left: 20px;
-}
+/* }
 
 li {
   margin: 10px 0;
@@ -662,99 +462,130 @@ footer {
     flex-direction: column;
   }
    
-   /* ---------------------- */
-/* RADIO PAGE STYLES */
-/* ---------------------- */
-   
- 
-.radio-live {
-  margin-bottom: 4rem;
-  border-bottom: 1px solid #000;
-  padding-bottom: 3rem;
+
+   /* RADIO */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.radio-live h1 {
-  font-size: 2.2rem;
+/* BODY */
+body {
+  background-color: #000;
+  color: #fff;
+  font-family: 'Georgia', serif;
+  line-height: 1.6;
+  padding: 2rem;
 }
 
-.radio-note {
-  font-style: italic;
-  opacity: 0.7;
-  margin-bottom: 1rem;
-}
-
-.radio-archive h2 {
-  font-size: 1.6rem;
-  margin-bottom: 2rem;
-}
-
-.archive-item {
-  margin-bottom: 2.5rem;
-}
-
-.archive-item p {
-  font-size: 0.95rem;
-  margin-bottom: 0.5rem;
-  opacity: 0.85;
-}
-   /* =========================
-   RADIO — OLD STATION STYLE
-   ========================= */
-
+/* RADIO MAIN */
 .radio {
-  max-width: 680px;
-  margin: 0 auto;
-  padding: 4rem 1.5rem;
+  max-width: 800px;
+  margin: 3rem auto;
 }
 
-.radio-live {
-  display: flex;
-  flex-direction: column;
-  gap: 1.8rem;
-}
-
-/* ON AIR */
-.radio-onair {
-  font-size: 0.75rem;
-  letter-spacing: 0.3em;
-  opacity: 0.75;
-}
-
-/* TITLE */
-.radio-title {
-  font-size: 2.4rem;
+/* Bangla Intro Text */
+.radio-intro p {
+  font-size: 1.2rem;
+  font-style: italic;
+  color: #f0e68c; /* golden touch */
+  text-align: center;
+  margin-bottom: 2rem;
   letter-spacing: 0.05em;
 }
 
-/* DESCRIPTION */
-.radio-description {
-  font-size: 1rem;
-  line-height: 1.8;
-  opacity: 0.85;
+/* LIVE SECTION */
+.live-section {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
 }
 
-/* NOW PLAYING BOX */
-.now-playing {
-  border-left: 2px solid #ffffff;
-  padding-left: 1rem;
+.radio-icon {
+  width: 50px;
+  height: 50px;
+}
+
+.broadcast-status {
+  font-size: 0.9rem;
+  letter-spacing: 0.15em;
+}
+
+.broadcast-status.live {
+  color: #ff4d4d;
+}
+
+.broadcast-status.offline {
+  color: #888;
+}
+
+/* PROGRAMS */
+.radio-programs h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #fff;
+  display: inline-block;
+  padding-bottom: 0.2rem;
+}
+
+.radio-programs ul {
+  list-style: none;
   margin-top: 1rem;
 }
 
-.now-playing .label {
-  font-size: 0.7rem;
-  letter-spacing: 0.25em;
-  opacity: 0.6;
+.radio-programs li {
+  margin-bottom: 0.8rem;
 }
 
-.now-playing .track {
-  margin-top: 0.4rem;
-  font-style: italic;
-  opacity: 0.9;
+.radio-programs .time {
+  font-weight: bold;
+  margin-right: 0.5rem;
+  color: #f0e68c;
 }
 
-/* AUDIO PLAYER */
+/* LIVE AUDIO */
+.live-audio {
+  margin: 2rem 0;
+}
+
+/* ARCHIVE */
+.radio-archive h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #fff;
+  display: inline-block;
+  padding-bottom: 0.2rem;
+}
+
+.archive-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.archive-list .date {
+  display: block;
+  font-size: 0.8rem;
+  opacity: 0.7;
+  margin-bottom: 0.3rem;
+}
+
+/* AUDIO PLAYER STYLING */
 audio {
-  margin-top: 2rem;
   width: 100%;
-  filter: grayscale(100%);
+  outline: none;
+}
+
+/* OPTIONAL: texture / background effect */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: url('../images/texture.png') repeat;
+  opacity: 0.05;
+  pointer-events: none;
 }
