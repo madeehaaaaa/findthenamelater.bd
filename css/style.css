@@ -53,6 +53,13 @@ body {
   gap: 3rem;
 }
 
+.portal-icon {
+  width: 48px;
+  height: 48px;
+  border: 1px solid #000;
+}
+
+
 }
 
 /* PORTAL BUTTONS */
