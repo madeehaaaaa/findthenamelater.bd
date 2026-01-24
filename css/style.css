@@ -3,21 +3,51 @@
    PURE BLACK & WHITE THEME
    ========================================= */
 
-/* RESET */
+/* ===== GLOBAL RESET ===== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* BODY */
+/* ===== BODY ===== */
 body {
-  background-color: #FFFFFF; /* white canvas */
-  color: #000000; /* black text */
-  font-family: "Georgia", "Times New Roman", serif;
-  line-height: 1.8;
-  letter-spacing: 0.03em;
-  overflow-x: hidden;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #0f0f0f;
+  color: #ffffff;
+}
+
+/* ===== CLICKABLE SECTION ===== */
+.clickable-section {
+  display: block;              /* makes <a> behave like a section */
+  text-decoration: none;       /* removes underline */
+  color: inherit;              /* keeps text color */
+  padding: 30px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #1a1a1a, #111);
+  transition: 
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    background 0.3s ease;
+}
+
+/* ===== HOVER EFFECT ===== */
+.clickable-section:hover {
+  transform: translateY(-6px) scale(1.01);
+  box-shadow: 0 20px 40px rgba(255, 255, 255, 0.08);
+  background: linear-gradient(135deg, #222, #141414);
+  cursor: pointer;
+}
+
+/* ===== OPTIONAL INNER TEXT STYLING ===== */
+.clickable-section h2 {
+  font-size: 1.6rem;
+  margin-bottom: 10px;
+}
+
+.clickable-section p {
+  font-size: 1rem;
+  opacity: 0.85;
 }
 
 /* HOMEPAGE HERO SECTION */
