@@ -1,6 +1,6 @@
 /* =========================================
    AOBD — EVERYTHING ABOUT BANGLA
-   Black & White Letter Foundation
+   Black & White Foundation with Accents
    ========================================= */
 
 /* RESET */
@@ -12,11 +12,12 @@
 
 /* BODY */
 body {
-  background: #0b0b0b;
+  background-color: #0b0b0b; /* dark canvas */
   color: #f2f2f2;
   font-family: "Georgia", "Times New Roman", serif;
-  line-height: 1.9;
+  line-height: 1.8;
   letter-spacing: 0.03em;
+  overflow-x: hidden;
 }
 
 /* MAIN CONTAINER */
@@ -28,14 +29,14 @@ main {
 
 /* HEADINGS */
 h1 {
-  font-size: 2.3rem;
+  font-size: 2.8rem;
   font-weight: normal;
   margin-bottom: 2rem;
   letter-spacing: 0.05em;
 }
 
 h2 {
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   font-weight: normal;
   margin-bottom: 1rem;
   letter-spacing: 0.04em;
@@ -53,16 +54,15 @@ a {
   color: inherit;
   text-decoration: none;
   border-bottom: 1px solid rgba(255,255,255,0.3);
+  transition: all 0.3s ease;
 }
 
 a:hover {
   border-bottom: 1px solid rgba(255,255,255,0.8);
+  color: #ffd166;
 }
 
-/* =========================================
-   NAVIGATION
-   ========================================= */
-
+/* NAVIGATION */
 nav {
   max-width: 720px;
   margin: 2rem auto;
@@ -76,7 +76,6 @@ nav a {
   font-size: 0.85rem;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  border: none;
   opacity: 0.7;
 }
 
@@ -91,23 +90,22 @@ nav a:hover {
 .letter {
   display: flex;
   flex-direction: column;
-  gap: 3.5rem;
+  gap: 3rem;
 }
 
 .letter-block p {
   font-size: 1.1rem;
+  line-height: 1.8;
 }
 
-/* =========================================
-   CLICKABLE OBJECTS (IMAGES AS PORTALS)
-   ========================================= */
-
+/* CLICKABLE OBJECTS (IMAGES AS PORTALS) */
 .object-link {
   display: inline-flex;
   align-items: center;
   gap: 0.8rem;
   width: fit-content;
   margin: 1rem 0;
+  cursor: pointer;
 }
 
 .object-link img {
@@ -116,6 +114,7 @@ nav a:hover {
   filter: grayscale(100%);
   opacity: 0.85;
   transition: all 0.4s ease;
+  border-radius: 6px;
 }
 
 .object-link span {
@@ -128,105 +127,19 @@ nav a:hover {
 .object-link:hover img {
   filter: grayscale(0%);
   opacity: 1;
+  transform: scale(1.15);
 }
 
-/* }
-
-li {
-  margin: 10px 0;
-}
-
-/* ---------- SIDE NOTES / POETIC INSERTS ---------- */
-.note {
-  margin: 40px 0;
-  padding: 18px 22px;
-  background: #faf7f1;
-  border-left: 6px solid var(--river-blue);
-  font-size: 0.95rem;
-  color: var(--river-blue);
-  font-style: italic;
-}
-
-/* ---------- QUOTE STYLE ---------- */
-blockquote {
-  margin: 50px 0;
-  padding: 30px;
-  background: #fff7ec;
-  border-top: 4px solid var(--golden);
-  border-bottom: 4px solid var(--golden);
-  font-style: italic;
-}
-
-/* ---------- FOOTER FEEL ---------- */
-footer {
-  text-align: center;
-  margin: 80px 0;
-  color: var(--clay);
-  font-size: 0.9rem;
-}
-
-/* ---------- RESPONSIVE (still not modern) ---------- */
-@media (max-width: 768px) {
-  main {
-    margin: 60px 20px;
-    padding: 30px;
-  }
-
-  h1 {
-    font-size: 2.4rem;
-  }
-
-  nav {
-    gap: 14px;
-  }
-}  margin-bottom: 2.5rem;
-}
-
-/* ---------- SECTIONS ---------- */
-section {
-  margin: 3rem 0;
-  padding-left: 1.2rem;
-  border-left: 2px solid rgba(0,0,0,0.08);
-}
-
-/* Section personalities */
-.section-language { border-left-color: var(--leaf-green); }
-.section-history  { border-left-color: var(--mud-brown); }
-.section-art      { border-left-color: var(--clay-red); }
-.section-music    { border-left-color: var(--river-blue); }
-.section-chithi   { border-left-color: var(--sun-marigold); }
-
-/* ---------- LISTS ---------- */
-ul {
-  margin-top: 1rem;
-  padding-left: 1.2rem;
-}
-
-li {
-  margin-bottom: 0.5rem;
-}
-
-/* ---------- ORNAMENTAL DIVIDER ---------- */
-.divider {
-  text-align: center;
-  margin: 4rem 0;
-  font-size: 1.3rem;
-  color: var(--sun-marigold);
-  letter-spacing: 6px;
-  opacity: 0.85;
-}
-
-.divider::before {
-  content: "❖ ❖ ❖";
-}
-
-/* ---------- ART SLOT (YOUR CANVAS) ---------- */
+/* =========================================
+   ART SLOTS / PLACEHOLDERS
+   ========================================= */
 .art-slot {
   margin: 3rem 0;
   padding: 2rem;
-  background: rgba(255,255,255,0.75);
-  border: 1px dashed var(--mud-brown);
+  background: rgba(255,255,255,0.05);
+  border: 1px dashed #888;
   position: relative;
+  border-radius: 10px;
 }
 
 .art-slot img {
@@ -235,90 +148,56 @@ li {
   display: block;
 }
 
-/* subtle note */
 .art-slot::after {
   content: "✦ visual archive ✦";
   position: absolute;
   bottom: -12px;
   right: 12px;
   font-size: 0.7rem;
-  color: var(--mud-brown);
+  color: #888;
   opacity: 0.6;
 }
 
-/* ---------- LINKS ---------- */
-a {
-  color: var(--clay-red);
+/* =========================================
+   SECTIONS
+   ========================================= */
+section {
+  margin: 3rem 0;
+  padding: 2rem 1.5rem;
+  border-left: 4px solid #555;
+  border-radius: 8px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  background-color: rgba(255,255,255,0.03);
 }
 
-a:hover {
-  color: var(--sun-marigold);
+section:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(255,255,255,0.05);
 }
 
-/* ---------- FOOTNOTE / SMALL TEXT ---------- */
-small {
-  font-size: 0.8rem;
-  color: var(--ash-gray);
-}
+.section-language { border-left-color: #6ab04c; } /* green accent */
+.section-history  { border-left-color: #d35400; } /* earthy brown */
+.section-art      { border-left-color: #e74c3c; } /* red accent */
+.section-music    { border-left-color: #3498db; } /* river blue */
+.section-chithi   { border-left-color: #f1c40f; } /* golden sun */
 
-/* ---------- ANIMATION ---------- */
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(14px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* ---------- RESPONSIVE ---------- */
-@media (max-width: 768px) {
-  main {
-    margin: 2.5rem auto;
-  }
-
-  h1 {
-    font-size: 2rem;
-  }
-}  margin-bottom: 1.3rem;
-  font-size: 1.1rem;
-}
-
-/* --- Intro --- */
+/* INTRO PARAGRAPH */
 .intro {
   font-style: italic;
-  color: var(--mud-brown);
-  border-left: 4px solid var(--sun-marigold);
-  padding-left: 1.2rem;
+  color: #f2f2f2;
+  border-left: 4px solid #f1c40f;
+  padding-left: 1rem;
   margin-bottom: 2.5rem;
 }
 
-/* --- Sections --- */
-section {
-  margin-bottom: 3.5rem;
-  padding-bottom: 2rem;
-  position: relative;
-}
-
-section::after {
-  content: "— ❖ —";
-  display: block;
-  text-align: center;
-  margin-top: 2.5rem;
-  color: var(--sun-marigold);
-  font-size: 0.9rem;
-}
-
-/* --- Lists --- */
+/* LISTS */
 ul {
   list-style: none;
+  padding-left: 1.2rem;
 }
 
 ul li {
   margin-bottom: 0.7rem;
-  padding-left: 1.3rem;
   position: relative;
 }
 
@@ -326,176 +205,47 @@ ul li::before {
   content: "✦";
   position: absolute;
   left: 0;
-  top: 3px;
-  color: var(--sun-marigold);
-  font-size: 0.7rem;
+  top: 0;
+  color: #f1c40f;
+  font-size: 0.8rem;
 }
 
-/* --- Links --- */
-a {
-  color: var(--river-blue);
+/* QUOTES */
+blockquote {
+  margin: 50px 0;
+  padding: 25px;
+  background: rgba(255,255,255,0.05);
+  border-left: 6px solid #f1c40f;
+  font-style: italic;
 }
 
-a:hover {
-  text-decoration: underline;
-}
-
-/* --- Chithi (handwritten archive feel) --- */
-.chithi-entry {
-  background: #fffdf7;
-  padding: 2rem;
-  margin-bottom: 2.5rem;
-  border: 1px solid rgba(0,0,0,0.08);
-  box-shadow: 0 10px 25px var(--paper-shadow);
-  position: relative;
-}
-
-.chithi-entry::before {
-  content: "✉";
-  position: absolute;
-  top: -14px;
-  left: 20px;
-  background: var(--rice-white);
-  padding: 0 6px;
-  color: var(--clay-red);
-}
-
-/* --- Responsive --- */
-@media (max-width: 600px) {
-  h1 {
-    font-size: 2.1rem;
-  }
-
-  main {
-    margin: 3rem auto;
-  }
-
-  nav {
-    justify-content: center;
-  }
-}    color: #2c1f2b;
-    text-decoration: none;
-    font-weight: 500;
-}
-
-a:hover {
-    color: #ffd166;
-    text-decoration: underline;
-}
-
-/* === Sections === */
-section {
-    background: #fff;
-    margin: 30px 0;
-    padding: 25px 30px;
-    border-radius: 12px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-section:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-}
-
-/* === Intro paragraph === */
-p.intro {
-    font-size: 1.3rem;
-    font-style: italic;
-    color: #5b3c4a;
-    text-align: center;
-    margin-bottom: 40px;
-}
-
-/* === Chithi Issues === */
-.chithi-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-}
-
-.chithi-list li {
-    flex: 1 1 200px;
-    background: #2c1f2b;
-    color: #fff;
-    padding: 15px;
-    border-radius: 10px;
-    transition: 0.3s;
-}
-
-.chithi-list li:hover {
-    background: #ffd166;
-    color: #2c1f2b;
-    transform: translateY(-5px);
-}
-
-/* === Footer === */
+/* FOOTER */
 footer {
-    text-align: center;
-    padding: 30px 0;
-    background: #2c1f2b;
-    color: #fdf6f0;
-    font-size: 0.9rem;
-    margin-top: 50px;
+  text-align: center;
+  margin: 50px 0;
+  color: #aaa;
+  font-size: 0.9rem;
 }
 
-/* === Responsive Design === */
-@media (max-width: 768px) {
-    h1 {
-        font-size: 2.2rem;
-    }
-
-    h2 {
-        font-size: 1.5rem;
-    }
-
-    nav {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .chithi-list {
-        flex-direction: column;
-    }
-   }@media (max-width: 600px) {
-  nav {
-    flex-direction: column;
-  }
-   
-
-   /* RADIO */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-/* BODY */
-body {
-  background-color: #000;
-  color: #fff;
-  font-family: 'Georgia', serif;
-  line-height: 1.6;
-  padding: 2rem;
-}
-
-/* RADIO MAIN */
+/* =========================================
+   RADIO SECTION
+   ========================================= */
 .radio {
   max-width: 800px;
   margin: 3rem auto;
+  padding: 2rem;
+  background: rgba(255,255,255,0.02);
+  border-radius: 10px;
 }
 
-/* Bangla Intro Text */
 .radio-intro p {
   font-size: 1.2rem;
   font-style: italic;
   color: #f0e68c; /* golden touch */
   text-align: center;
   margin-bottom: 2rem;
-  letter-spacing: 0.05em;
 }
 
-/* LIVE SECTION */
 .live-section {
   display: flex;
   align-items: center;
@@ -509,110 +259,36 @@ body {
 }
 
 .broadcast-status {
-  font-size: 0.9rem;
-  letter-spacing: 0.15em;
+  font-size: 1rem;
+  letter-spacing: 0.1em;
 }
 
 .broadcast-status.live {
   color: #ff4d4d;
+  font-weight: bold;
+  animation: blink 1s infinite;
 }
 
 .broadcast-status.offline {
   color: #888;
 }
 
-/* PROGRAMS */
-.radio-programs h2 {
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
-  border-bottom: 2px solid #fff;
-  display: inline-block;
-  padding-bottom: 0.2rem;
-}
-
-.radio-programs ul {
-  list-style: none;
-  margin-top: 1rem;
-}
-
-.radio-programs li {
-  margin-bottom: 0.8rem;
-}
-
-.radio-programs .time {
-  font-weight: bold;
-  margin-right: 0.5rem;
-  color: #f0e68c;
-}
-
-/* LIVE AUDIO */
-.live-audio {
-  margin: 2rem 0;
-}
-
-/* ARCHIVE */
-.radio-archive h2 {
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
-  border-bottom: 2px solid #fff;
-  display: inline-block;
-  padding-bottom: 0.2rem;
-}
-
-.archive-list {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
-
-.archive-list .date {
-  display: block;
-  font-size: 0.8rem;
-  opacity: 0.7;
-  margin-bottom: 0.3rem;
-}
-
-/* AUDIO PLAYER STYLING */
-audio {
-  width: 100%;
-  outline: none;
-}
-
-/* OPTIONAL: texture / background effect */
-body::before {
-  content: "";
-  position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background: url('../images/texture.png') repeat;
-  opacity: 0.05;
-  pointer-events: none;
-}
-
-/* LIVE blinking effect */
-.broadcast-status.live {
-  color: #ff4d4d; /* bright red */
-  font-weight: bold;
-  animation: blink 1s infinite;
-  text-shadow: 0 0 5px #ff4d4d, 0 0 10px #ff1a1a, 0 0 15px #ff4d4d;
-}
-
-/* Blinking keyframes */
 @keyframes blink {
-  0%, 50%, 100% { opacity: 1; }
-  25%, 75% { opacity: 0.4; }
+  0%,50%,100% {opacity:1;}
+  25%,75% {opacity:0.4;}
 }
 
-.radio-programs h2 {
+/* PROGRAMS */
+.radio-programs h2,
+.radio-archive h2 {
   font-size: 1.6rem;
+  margin-bottom: 1rem;
   border-bottom: 2px solid #fff;
   display: inline-block;
   padding-bottom: 0.2rem;
-  margin-bottom: 1rem;
 }
 
-.program-list {
+.program-list, .archive-list {
   list-style: none;
   padding-left: 0;
   display: flex;
@@ -620,28 +296,69 @@ body::before {
   gap: 1rem;
 }
 
-.program-list li {
+.program-list li, .archive-list li {
   background-color: rgba(255,255,255,0.05);
   padding: 0.8rem 1rem;
-  border-left: 5px solid #f0e68c; /* golden accent */
+  border-left: 5px solid #f0e68c;
   cursor: pointer;
   transition: all 0.3s ease;
-  font-family: 'Georgia', serif;
 }
 
-.program-list li:hover {
+.program-list li:hover, .archive-list li:hover {
   background-color: rgba(255,255,255,0.15);
   transform: translateX(5px);
 }
 
 .program-list .time {
   font-weight: bold;
-  color: #ff4d4d; /* red highlights for time */
+  color: #ff4d4d;
   margin-right: 0.5rem;
 }
 
-/* CURRENT PROGRAM HIGHLIGHT */
 .program-list li.current {
-  border-left-color: #00ffff; /* water tone highlight */
+  border-left-color: #00ffff;
   background-color: rgba(255,255,255,0.2);
 }
+
+/* AUDIO PLAYER */
+audio {
+  width: 100%;
+  outline: none;
+}
+
+/* =========================================
+   ANIMATIONS
+   ========================================= */
+@keyframes fadeInBounce {
+  0% { opacity: 0; transform: translateY(-30px); }
+  50% { opacity: 1; transform: translateY(10px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeUp {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes floatUp {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* =========================================
+   RESPONSIVE
+   ========================================= */
+@media (max-width: 768px) {
+  main { margin: 2rem 1rem; padding: 2rem; }
+  h1 { font-size: 2rem; }
+  h2 { font-size: 1.4rem; }
+  nav { flex-direction: column; gap: 12px; }
+  .radio { margin: 2rem 0; padding: 1.5rem; }
+}
+
+@media (max-width: 480px) {
+  h1 { font-size: 1.8rem; }
+  h2 { font-size: 1.2rem; }
+  .radio { padding: 1rem; }
+  .object-link span { font-size: 0.7rem; }
+   }
