@@ -1,148 +1,131 @@
-/* =========================================
-   AOBD — Everything About Bangla
-   Full Homepage CSS
-   ========================================= */
-
-/* -------- RESET -------- */
+/* ===== RESET ===== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
 }
 
-/* -------- BODY -------- */
 body {
-  background-color: #ffffff;
-  color: #000000;
-  font-family: "Georgia", "Times New Roman", serif;
+  background-color: #0b0b0b;
+  color: white;
   min-height: 100vh;
 }
 
-/* =========================================
-   HERO / WELCOME SECTION
-   ========================================= */
-
+/* ===== HERO SECTION (IMAGE + SHAGOTOM) ===== */
 .hero {
   width: 100%;
-  height: 100vh;
-
-  background-image: url("../images/pattern.png"); /**/
+  height: 85vh;
+  background-image: url("../images/shagotom.jpg"); /* FIX PATH */
   background-size: cover;
   background-position: center;
-
-  position: relative;
-  animation: slowZoom 18s ease-in-out infinite alternate;
-}
-
-/* soft overlay */
-.hero::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(255, 255, 255, 0.15);
-}
-
-/* hero content */
-.hero-overlay {
-  position: absolute;
-  inset: 0;
+  background-repeat: no-repeat;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
-  text-align: center;
+  position: relative;
+  cursor: pointer;
+  animation: fadeIn 1.5s ease forwards;
+}
+
+/* Dark overlay so text is visible */
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
 }
 
 /* SHAGOTOM TEXT */
 .hero h1 {
-  font-size: 4rem;
-  letter-spacing: 0.18em;
-  font-weight: normal;
-
-  animation: fadeUp 2.2s ease forwards;
+  position: relative;
+  z-index: 1;
+  font-size: 3.5rem;
+  letter-spacing: 3px;
+  color: #fff;
+  text-shadow: 0 0 25px rgba(255,255,255,0.4);
+  animation: float 4s ease-in-out infinite;
 }
 
-.hero h1 span {
-  display: block;
-  margin-top: 1rem;
-  font-size: 2rem;
-  letter-spacing: 0.3em;
-  opacity: 0.85;
-}
-
-/* =========================================
-   PORTAL SECTION
-   ========================================= */
-
+/* ===== PORTAL SECTION (BUTTONS BELOW IMAGE) ===== */
 .portal-section {
-  width: 100%;
-  max-width: 1000px;
-  margin: 0 auto;
-
-  padding: 6rem 2rem;
-
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  gap: 2.5rem;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  padding: 60px 20px 80px;
+  flex-wrap: wrap;
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.9),
+    rgba(0,0,0,1)
+  );
 }
 
-/* -------- PORTAL ITEM -------- */
+/* ===== PORTAL BUTTONS ===== */
 .portal {
-  text-decoration: none;
-  color: inherit;
-
-  border: 1px solid #000;
-  padding: 2.4rem 1.5rem;
-  text-align: center;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(10px);
 
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1rem;
+  justify-content: center;
 
-  opacity: 0;
-  animation: floatIn 1.2s ease forwards;
+  text-decoration: none;
+  color: white;
 
-  transition:
-    transform 0.35s ease,
-    box-shadow 0.35s ease;
+  border: 1px solid rgba(255,255,255,0.15);
+  box-shadow: 0 0 25px rgba(255,255,255,0.08);
+
+  transition: all 0.4s ease;
+  animation: fadeUp 1.2s ease forwards;
 }
 
-/* stagger animation */
-.portal:nth-child(1) { animation-delay: 0.2s; }
-.portal:nth-child(2) { animation-delay: 0.4s; }
-.portal:nth-child(3) { animation-delay: 0.6s; }
-.portal:nth-child(4) { animation-delay: 0.8s; }
-
-/* hover */
-.portal:hover {
-  transform: translateY(-6px);
-  box-shadow: 8px 8px 0 #000;
-}
-
-/* -------- ICON PLACEHOLDER -------- */
+/* ICON CIRCLE */
 .portal-icon {
-  width: 48px;
-  height: 48px;
-  border: 1px solid #000;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #ffffff, #cfcfcf);
+  margin-bottom: 12px;
+  box-shadow: 0 0 15px rgba(255,255,255,0.6);
 }
 
-/* -------- PORTAL TEXT -------- */
+/* TEXT */
 .portal span {
-  font-size: 0.85rem;
-  letter-spacing: 0.25em;
-  text-transform: uppercase;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
 }
 
-/* =========================================
-   ANIMATIONS
-   ========================================= */
+/* ===== HOVER MAGIC ===== */
+.portal:hover {
+  transform: translateY(-12px) scale(1.08);
+  box-shadow:
+    0 0 40px rgba(255,255,255,0.35),
+    0 0 80px rgba(255,255,255,0.15);
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(1.03);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
 
 @keyframes fadeUp {
   from {
     opacity: 0;
-    transform: translateY(28px);
+    transform: translateY(30px);
   }
   to {
     opacity: 1;
@@ -150,41 +133,8 @@ body {
   }
 }
 
-@keyframes slowZoom {
-  from {
-    background-size: 100%;
-  }
-  to {
-    background-size: 108%;
-  }
-}
-
-@keyframes floatIn {
-  from {
-    opacity: 0;
-    transform: translateY(22px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* =========================================
-   RESPONSIVE
-   ========================================= */
-
-@media (max-width: 768px) {
-  .hero h1 {
-    font-size: 2.8rem;
-  }
-
-  .hero h1 span {
-    font-size: 1.4rem;
-  }
-
-  .portal-section {
-    padding: 4rem 1.5rem;
-    gap: 1.8rem;
-  }
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+  100% { transform: translateY(0); }
 }
