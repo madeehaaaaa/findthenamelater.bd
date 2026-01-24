@@ -697,3 +697,64 @@ footer {
   margin-bottom: 0.5rem;
   opacity: 0.85;
 }
+   /* =========================
+   RADIO — OLD STATION STYLE
+   ========================= */
+
+.radio {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 4rem 1.5rem;
+}
+
+.radio-live {
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+}
+
+/* ON AIR */
+.radio-onair {
+  font-size: 0.75rem;
+  letter-spacing: 0.3em;
+  opacity: 0.75;
+}
+
+/* TITLE */
+.radio-title {
+  font-size: 2.4rem;
+  letter-spacing: 0.05em;
+}
+
+/* DESCRIPTION */
+.radio-description {
+  font-size: 1rem;
+  line-height: 1.8;
+  opacity: 0.85;
+}
+
+/* NOW PLAYING BOX */
+.now-playing {
+  border-left: 2px solid #ffffff;
+  padding-left: 1rem;
+  margin-top: 1rem;
+}
+
+.now-playing .label {
+  font-size: 0.7rem;
+  letter-spacing: 0.25em;
+  opacity: 0.6;
+}
+
+.now-playing .track {
+  margin-top: 0.4rem;
+  font-style: italic;
+  opacity: 0.9;
+}
+
+/* AUDIO PLAYER */
+audio {
+  margin-top: 2rem;
+  width: 100%;
+  filter: grayscale(100%);
+}
