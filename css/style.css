@@ -1,6 +1,6 @@
 /* =========================================
    AOBD — EVERYTHING ABOUT BANGLA
-   Black & White Foundation with Accents
+   PURE BLACK & WHITE THEME
    ========================================= */
 
 /* RESET */
@@ -12,8 +12,8 @@
 
 /* BODY */
 body {
-  background-color: #FFFFFF; /* dark canvas */
-  color: #000000;
+  background-color: #FFFFFF; /* white canvas */
+  color: #000000; /* black text */
   font-family: "Georgia", "Times New Roman", serif;
   line-height: 1.8;
   letter-spacing: 0.03em;
@@ -51,15 +51,15 @@ p {
 
 /* LINKS */
 a {
-  color: inherit;
+  color: #000; /* black links */
   text-decoration: none;
-  border-bottom: 1px solid rgba(255,255,255,0.3);
+  border-bottom: 1px solid rgba(0,0,0,0.2);
   transition: all 0.3s ease;
 }
 
 a:hover {
-  border-bottom: 1px solid rgba(255,255,255,0.8);
-  color: #ffd166;
+  border-bottom: 1px solid rgba(0,0,0,0.8);
+  color: #444; /* dark gray hover */
 }
 
 /* NAVIGATION */
@@ -86,7 +86,6 @@ nav a:hover {
 /* =========================================
    LETTER STYLE (HOME / LANGUAGE)
    ========================================= */
-
 .letter {
   display: flex;
   flex-direction: column;
@@ -131,61 +130,34 @@ nav a:hover {
 }
 
 /* =========================================
-   ART SLOTS / PLACEHOLDERS
-   ========================================= */
-.art-slot {
-  margin: 3rem 0;
-  padding: 2rem;
-  background: rgba(255,255,255,0.05);
-  border: 1px dashed #888;
-  position: relative;
-  border-radius: 10px;
-}
-
-.art-slot img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-
-.art-slot::after {
-  content: "✦ visual archive ✦";
-  position: absolute;
-  bottom: -12px;
-  right: 12px;
-  font-size: 0.7rem;
-  color: #888;
-  opacity: 0.6;
-}
-
-/* =========================================
    SECTIONS
    ========================================= */
 section {
   margin: 3rem 0;
   padding: 2rem 1.5rem;
-  border-left: 4px solid #555;
+  border-left: 4px solid #000; /* black border */
   border-radius: 8px;
   transition: transform 0.3s, box-shadow 0.3s;
-  background-color: rgba(255,255,255,0.03);
+  background-color: rgba(0,0,0,0.02); /* subtle gray */
 }
 
 section:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(255,255,255,0.05);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
 }
 
-.section-language { border-left-color: #6ab04c; } /* green accent */
-.section-history  { border-left-color: #d35400; } /* earthy brown */
-.section-art      { border-left-color: #e74c3c; } /* red accent */
-.section-music    { border-left-color: #3498db; } /* river blue */
-.section-chithi   { border-left-color: #f1c40f; } /* golden sun */
+/* Section accents - subtle gray shades */
+.section-language { border-left-color: #555; }
+.section-history  { border-left-color: #666; }
+.section-art      { border-left-color: #777; }
+.section-music    { border-left-color: #888; }
+.section-chithi   { border-left-color: #999; }
 
 /* INTRO PARAGRAPH */
 .intro {
   font-style: italic;
-  color: #f2f2f2;
-  border-left: 4px solid #f1c40f;
+  color: #000;
+  border-left: 4px solid #000;
   padding-left: 1rem;
   margin-bottom: 2.5rem;
 }
@@ -206,7 +178,7 @@ ul li::before {
   position: absolute;
   left: 0;
   top: 0;
-  color: #f1c40f;
+  color: #000;
   font-size: 0.8rem;
 }
 
@@ -214,16 +186,42 @@ ul li::before {
 blockquote {
   margin: 50px 0;
   padding: 25px;
-  background: rgba(255,255,255,0.05);
-  border-left: 6px solid #f1c40f;
+  background: rgba(0,0,0,0.03);
+  border-left: 6px solid #000;
   font-style: italic;
+}
+
+/* ART SLOTS */
+.art-slot {
+  margin: 3rem 0;
+  padding: 2rem;
+  background: rgba(0,0,0,0.02);
+  border: 1px dashed #555;
+  position: relative;
+  border-radius: 10px;
+}
+
+.art-slot img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.art-slot::after {
+  content: "✦ visual archive ✦";
+  position: absolute;
+  bottom: -12px;
+  right: 12px;
+  font-size: 0.7rem;
+  color: #555;
+  opacity: 0.6;
 }
 
 /* FOOTER */
 footer {
   text-align: center;
   margin: 50px 0;
-  color: #aaa;
+  color: #444;
   font-size: 0.9rem;
 }
 
@@ -234,14 +232,14 @@ footer {
   max-width: 800px;
   margin: 3rem auto;
   padding: 2rem;
-  background: rgba(255,255,255,0.02);
+  background: rgba(0,0,0,0.02);
   border-radius: 10px;
 }
 
 .radio-intro p {
   font-size: 1.2rem;
   font-style: italic;
-  color: #f0e68c; /* golden touch */
+  color: #000;
   text-align: center;
   margin-bottom: 2rem;
 }
@@ -264,7 +262,7 @@ footer {
 }
 
 .broadcast-status.live {
-  color: #ff4d4d;
+  color: #000;
   font-weight: bold;
   animation: blink 1s infinite;
 }
@@ -283,7 +281,7 @@ footer {
 .radio-archive h2 {
   font-size: 1.6rem;
   margin-bottom: 1rem;
-  border-bottom: 2px solid #fff;
+  border-bottom: 2px solid #000;
   display: inline-block;
   padding-bottom: 0.2rem;
 }
@@ -297,27 +295,27 @@ footer {
 }
 
 .program-list li, .archive-list li {
-  background-color: rgba(255,255,255,0.05);
+  background-color: rgba(0,0,0,0.02);
   padding: 0.8rem 1rem;
-  border-left: 5px solid #f0e68c;
+  border-left: 5px solid #000;
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
 .program-list li:hover, .archive-list li:hover {
-  background-color: rgba(255,255,255,0.15);
+  background-color: rgba(0,0,0,0.05);
   transform: translateX(5px);
 }
 
 .program-list .time {
   font-weight: bold;
-  color: #ff4d4d;
+  color: #000;
   margin-right: 0.5rem;
 }
 
 .program-list li.current {
-  border-left-color: #00ffff;
-  background-color: rgba(255,255,255,0.2);
+  border-left-color: #000;
+  background-color: rgba(0,0,0,0.07);
 }
 
 /* AUDIO PLAYER */
@@ -361,4 +359,4 @@ audio {
   h2 { font-size: 1.2rem; }
   .radio { padding: 1rem; }
   .object-link span { font-size: 0.7rem; }
-   }
+}
