@@ -23,7 +23,7 @@ body {
 /* HOMEPAGE HERO SECTION */
 .home-intro {
   height: 100vh; /* full screen height */
-  background-image: url('../images/your-image.jpg'); /* path to your image */
+  background-image: url('../images/pattern.png'); /* path to your image */
   background-size: cover;        /* image covers the section */
   background-position: center;   /* center the image */
   background-repeat: no-repeat;  /* no tiling */
