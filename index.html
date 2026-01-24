@@ -2,63 +2,36 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>AOBD — Everything About Bangla</title>
+  <title> Everything About Bangla</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
-  <section class="home-intro">
-  <div class="intro-text">
-    <h1>Shagotom!</h1>
-    <h2>শাগতোম!</h2>
-  </div>
-  </section>
+  <!-- Clickable Portals -->
+  <section class="portal-section">
 
-<div id="nav-placeholder"></div>
-<script>
-  fetch("includes/nav.html")
-    .then(res => res.text())
-    .then(html => {
-      document.getElementById("nav-placeholder").innerHTML = html;
-    });
-</script>
-<main class="homepage">
-  <!-- Full-screen welcome -->
-  <section class="welcome-section">
-    <div class="overlay"></div>
-    <div class="welcome-text">
-      <h1>Shagotom!</h1>
-      <h2>স্বাগতম!</h2>
-    </div>
-  </section>
-
-  <!-- Project title -->
-  <section class="project-title">
-    <h1>AOBD — Everything About Bangla</h1>
-  </section>
-
-  <!-- Section shortcuts with placeholder boxes -->
-  <section class="section-shortcuts">
-    <a href="art.html" class="shortcut">
-      <div class="placeholder-img"></div>
+    <a href="art.html" class="portal">
+      <div class="portal-icon"></div>
       <span>Art</span>
     </a>
-    <a href="music.html" class="shortcut">
-      <div class="placeholder-img"></div>
+
+    <a href="music.html" class="portal">
+      <div class="portal-icon"></div>
       <span>Music</span>
     </a>
-    <a href="radio.html" class="shortcut">
-      <div class="placeholder-img"></div>
+
+    <a href="radio.html" class="portal">
+      <div class="portal-icon"></div>
       <span>Radio</span>
     </a>
-    <a href="chithi.html" class="shortcut">
-      <div class="placeholder-img"></div>
+
+    <a href="chithi.html" class="portal">
+      <div class="portal-icon"></div>
       <span>Chithi</span>
     </a>
-  </section>
-</main>
 
+  </section>
 
 </body>
 </html>
