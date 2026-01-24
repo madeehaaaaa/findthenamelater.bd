@@ -1,421 +1,83 @@
 /* =========================================
-   AOBD — EVERYTHING ABOUT BANGLA
-   PURE BLACK & WHITE THEME
+   AOBD — Everything About Bangla
+   Clean White Canvas (Homepage)
    ========================================= */
 
-/* ===== GLOBAL RESET ===== */
+/* -------- RESET -------- */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* ===== BODY ===== */
+/* -------- BODY -------- */
 body {
-  font-family: Arial, Helvetica, sans-serif;
-  background-color: #0f0f0f;
-  color: #ffffff;
-}
-
-/* ===== CLICKABLE SECTION ===== */
-.clickable-section {
-  display: block;              /* makes <a> behave like a section */
-  text-decoration: none;       /* removes underline */
-  color: inherit;              /* keeps text color */
-  padding: 30px;
-  border-radius: 16px;
-  background: linear-gradient(135deg, #1a1a1a, #111);
-  transition: 
-    transform 0.3s ease,
-    box-shadow 0.3s ease,
-    background 0.3s ease;
-}
-
-/* ===== HOVER EFFECT ===== */
-.clickable-section:hover {
-  transform: translateY(-6px) scale(1.01);
-  box-shadow: 0 20px 40px rgba(255, 255, 255, 0.08);
-  background: linear-gradient(135deg, #222, #141414);
-  cursor: pointer;
-}
-
-/* ===== OPTIONAL INNER TEXT STYLING ===== */
-.clickable-section h2 {
-  font-size: 1.6rem;
-  margin-bottom: 10px;
-}
-
-.clickable-section p {
-  font-size: 1rem;
-  opacity: 0.85;
-}
-
-/* HOMEPAGE HERO SECTION */
-.home-intro {
-  height: 100vh; /* full screen height */
-  background-image: url('../images/pattern.png'); /* path to your image */
-  background-size: cover;        /* image covers the section */
-  background-position: center;   /* center the image */
-  background-repeat: no-repeat;  /* no tiling */
-  display: flex;                 /* for centering text */
-  align-items: center;           /* vertically center */
-  justify-content: center;       /* horizontally center */
-  position: relative;
-  color: #fff;                   /* text color on top of image */
-  text-align: center;
-}
-
-/* HERO TEXT */
-.home-intro .intro-text h1 {
-  font-size: 5rem;
-  font-family: 'Georgia', serif;
-  text-shadow: 2px 2px 8px rgba(0,0,0,0.7); /* makes text readable on image */
-}
-
-.home-intro .intro-text h2 {
-  font-size: 3rem;
-  font-family: 'Georgia', serif;
-  text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
-  margin-top: 0.5rem;
-}
-
-/* MAIN CONTAINER */
-main {
-  max-width: 720px;
-  margin: 0 auto;
-  padding: 4rem 1.5rem;
-}
-
-/* HEADINGS */
-h1 {
-  font-size: 2.8rem;
-  font-weight: normal;
-  margin-bottom: 2rem;
-  letter-spacing: 0.05em;
-}
-
-h2 {
-  font-size: 1.6rem;
-  font-weight: normal;
-  margin-bottom: 1rem;
-  letter-spacing: 0.04em;
-}
-
-/* PARAGRAPHS */
-p {
-  font-size: 1.05rem;
-  margin-bottom: 1.8rem;
-  opacity: 0.95;
-}
-
-/* LINKS */
-a {
-  color: #000; /* black links */
-  text-decoration: none;
-  border-bottom: 1px solid rgba(0,0,0,0.2);
-  transition: all 0.3s ease;
-}
-
-a:hover {
-  border-bottom: 1px solid rgba(0,0,0,0.8);
-  color: #444; /* dark gray hover */
-}
-
-/* NAVIGATION */
-nav {
-  max-width: 720px;
-  margin: 2rem auto;
-  padding: 0 1.5rem;
+  background-color: #ffffff;
+  color: #000000;
+  font-family: "Georgia", "Times New Roman", serif;
+  min-height: 100vh;
   display: flex;
-  gap: 1.5rem;
-  flex-wrap: wrap;
-}
-
-nav a {
-  font-size: 0.85rem;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  opacity: 0.7;
-}
-
-nav a:hover {
-  opacity: 1;
-}
-
-/* =========================================
-   LETTER STYLE (HOME / LANGUAGE)
-   ========================================= */
-.letter {
-  display: flex;
-  flex-direction: column;
-  gap: 3rem;
-}
-
-.letter-block p {
-  font-size: 1.1rem;
-  line-height: 1.8;
-}
-
-/* CLICKABLE OBJECTS (IMAGES AS PORTALS) */
-.object-link {
-  display: inline-flex;
+  justify-content: center;
   align-items: center;
-  gap: 0.8rem;
-  width: fit-content;
-  margin: 1rem 0;
-  cursor: pointer;
 }
 
-.object-link img {
-  width: 42px;
-  height: auto;
-  filter: grayscale(100%);
-  opacity: 0.85;
-  transition: all 0.4s ease;
-  border-radius: 6px;
-}
-
-.object-link span {
-  font-size: 0.85rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  opacity: 0.75;
-}
-
-.object-link:hover img {
-  filter: grayscale(0%);
-  opacity: 1;
-  transform: scale(1.15);
-}
-
-/* =========================================
-   SECTIONS
-   ========================================= */
-section {
-  margin: 3rem 0;
-  padding: 2rem 1.5rem;
-  border-left: 4px solid #000; /* black border */
-  border-radius: 8px;
-  transition: transform 0.3s, box-shadow 0.3s;
-  background-color: rgba(0,0,0,0.02); /* subtle gray */
-}
-
-section:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-}
-
-/* Section accents - subtle gray shades */
-.section-language { border-left-color: #555; }
-.section-history  { border-left-color: #666; }
-.section-art      { border-left-color: #777; }
-.section-music    { border-left-color: #888; }
-.section-chithi   { border-left-color: #999; }
-
-/* INTRO PARAGRAPH */
-.intro {
-  font-style: italic;
-  color: #000;
-  border-left: 4px solid #000;
-  padding-left: 1rem;
-  margin-bottom: 2.5rem;
-}
-
-/* LISTS */
-ul {
-  list-style: none;
-  padding-left: 1.2rem;
-}
-
-ul li {
-  margin-bottom: 0.7rem;
-  position: relative;
-}
-
-ul li::before {
-  content: "✦";
-  position: absolute;
-  left: 0;
-  top: 0;
-  color: #000;
-  font-size: 0.8rem;
-}
-
-/* QUOTES */
-blockquote {
-  margin: 50px 0;
-  padding: 25px;
-  background: rgba(0,0,0,0.03);
-  border-left: 6px solid #000;
-  font-style: italic;
-}
-
-/* ART SLOTS */
-.art-slot {
-  margin: 3rem 0;
-  padding: 2rem;
-  background: rgba(0,0,0,0.02);
-  border: 1px dashed #555;
-  position: relative;
-  border-radius: 10px;
-}
-
-.art-slot img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-
-.art-slot::after {
-  content: "✦ visual archive ✦";
-  position: absolute;
-  bottom: -12px;
-  right: 12px;
-  font-size: 0.7rem;
-  color: #555;
-  opacity: 0.6;
-}
-
-/* FOOTER */
-footer {
-  text-align: center;
-  margin: 50px 0;
-  color: #444;
-  font-size: 0.9rem;
-}
-
-/* =========================================
-   RADIO SECTION
-   ========================================= */
-.radio {
-  max-width: 800px;
-  margin: 3rem auto;
-  padding: 2rem;
-  background: rgba(0,0,0,0.02);
-  border-radius: 10px;
-}
-
-.radio-intro p {
-  font-size: 1.2rem;
-  font-style: italic;
-  color: #000;
-  text-align: center;
-  margin-bottom: 2rem;
-}
-
-.live-section {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  margin-bottom: 2rem;
-}
-
-.radio-icon {
-  width: 50px;
-  height: 50px;
-}
-
-.broadcast-status {
-  font-size: 1rem;
-  letter-spacing: 0.1em;
-}
-
-.broadcast-status.live {
-  color: #000;
-  font-weight: bold;
-  animation: blink 1s infinite;
-}
-
-.broadcast-status.offline {
-  color: #888;
-}
-
-@keyframes blink {
-  0%,50%,100% {opacity:1;}
-  25%,75% {opacity:0.4;}
-}
-
-/* PROGRAMS */
-.radio-programs h2,
-.radio-archive h2 {
-  font-size: 1.6rem;
-  margin-bottom: 1rem;
-  border-bottom: 2px solid #000;
-  display: inline-block;
-  padding-bottom: 0.2rem;
-}
-
-.program-list, .archive-list {
-  list-style: none;
-  padding-left: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-.program-list li, .archive-list li {
-  background-color: rgba(0,0,0,0.02);
-  padding: 0.8rem 1rem;
-  border-left: 5px solid #000;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.program-list li:hover, .archive-list li:hover {
-  background-color: rgba(0,0,0,0.05);
-  transform: translateX(5px);
-}
-
-.program-list .time {
-  font-weight: bold;
-  color: #000;
-  margin-right: 0.5rem;
-}
-
-.program-list li.current {
-  border-left-color: #000;
-  background-color: rgba(0,0,0,0.07);
-}
-
-/* AUDIO PLAYER */
-audio {
+/* -------- PORTAL SECTION -------- */
+.portal-section {
   width: 100%;
-  outline: none;
+  max-width: 900px;
+  padding: 3rem 1.5rem;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 2.5rem;
 }
 
-/* =========================================
-   ANIMATIONS
-   ========================================= */
-@keyframes fadeInBounce {
-  0% { opacity: 0; transform: translateY(-30px); }
-  50% { opacity: 1; transform: translateY(10px); }
-  100% { opacity: 1; transform: translateY(0); }
+/* -------- PORTAL ITEM -------- */
+.portal {
+  text-decoration: none;
+  color: inherit;
+
+  border: 1px solid #000;
+  padding: 2.2rem 1.5rem;
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+
+  transition: 
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
 }
 
-@keyframes fadeUp {
-  0% { opacity: 0; transform: translateY(20px); }
-  100% { opacity: 1; transform: translateY(0); }
+/* -------- HOVER EFFECT -------- */
+.portal:hover {
+  transform: translateY(-6px);
+  box-shadow: 8px 8px 0 #000;
 }
 
-@keyframes floatUp {
-  0% { opacity: 0; transform: translateY(20px); }
-  100% { opacity: 1; transform: translateY(0); }
+/* -------- ICON PLACEHOLDER -------- */
+.portal-icon {
+  width: 48px;
+  height: 48px;
+  border: 1px solid #000;
 }
 
-/* =========================================
-   RESPONSIVE
-   ========================================= */
-@media (max-width: 768px) {
-  main { margin: 2rem 1rem; padding: 2rem; }
-  h1 { font-size: 2rem; }
-  h2 { font-size: 1.4rem; }
-  nav { flex-direction: column; gap: 12px; }
-  .radio { margin: 2rem 0; padding: 1.5rem; }
+/* -------- TEXT -------- */
+.portal span {
+  font-size: 0.85rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
 }
 
-@media (max-width: 480px) {
-  h1 { font-size: 1.8rem; }
-  h2 { font-size: 1.2rem; }
-  .radio { padding: 1rem; }
-  .object-link span { font-size: 0.7rem; }
+/* -------- RESPONSIVE -------- */
+@media (max-width: 600px) {
+  .portal-section {
+    gap: 1.8rem;
+  }
+
+  .portal {
+    padding: 1.8rem 1.2rem;
+  }
 }
