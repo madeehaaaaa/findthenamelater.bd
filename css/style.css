@@ -124,3 +124,46 @@ body {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-10px); }
 }
+
+
+/* =========================================
+   ABOUT PAGE
+   ========================================= */
+
+.about-hero {
+  height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f7f5f0; /* change later: black / cream / white */
+}
+
+.about-hero h1 {
+  font-size: 3.5rem;
+  letter-spacing: 0.3em;
+  animation: fadeUp 1.2s ease forwards;
+}
+
+/* CONTENT */
+.about-content {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 5rem 2rem;
+  font-size: 1.1rem;
+  line-height: 2;
+}
+
+.about-intro {
+  font-style: italic;
+  margin-bottom: 3rem;
+  font-size: 1.3rem;
+}
+
+/* SIGNATURE */
+.about-sign {
+  margin-top: 4rem;
+  text-align: right;
+  letter-spacing: 0.15em;
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
