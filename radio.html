@@ -32,23 +32,32 @@
     });
   </script>
 
-  <section class="radio-programs">
-  <h2>Today's Programs</h2>
-  <ul class="program-list">
-    <li data-time="6:00 AM">
-      <span class="time">6:00 AM</span> Morning Folk Songs
-    </li>
-    <li data-time="12:00 PM">
-      <span class="time">12:00 PM</span> River Tales & Stories
-    </li>
-    <li data-time="6:00 PM">
-      <span class="time">6:00 PM</span> Evening Ghazals & Poems
-    </li>
-    <li data-time="9:00 PM">
-      <span class="time">9:00 PM</span> Nighttime Bangla Classics
-    </li>
-  </ul>
-  </section>
+  <script>
+  const programItems = document.querySelectorAll('.program-list li');
+
+  function highlightCurrentProgram() {
+    const now = new Date();
+    const currentHour = now.getHours();
+    const currentMinute = now.getMinutes();
+
+    programItems.forEach(li => li.classList.remove('current'));
+
+    programItems.forEach(li => {
+      const [time, meridiem] = li.dataset.time.split(' ');
+      let [hour, minute] = time.split(':').map(Number);
+      if (meridiem === 'PM' && hour !== 12) hour += 12;
+      if (meridiem === 'AM' && hour === 12) hour = 0;
+
+      if (currentHour === hour) {
+        li.classList.add('current');
+      }
+    });
+  }
+
+  highlightCurrentProgram();
+  setInterval(highlightCurrentProgram, 60000); // check every minute
+  </script>
+
   
 <body>
 
@@ -82,13 +91,21 @@
 
   <!-- Programs -->
   <section class="radio-programs">
-    <h2>Today's Programs</h2>
-    <ul>
-      <li><span class="time">6:00 AM</span> Morning Folk Songs</li>
-      <li><span class="time">12:00 PM</span> River Tales & Stories</li>
-      <li><span class="time">6:00 PM</span> Evening Ghazals & Poems</li>
-      <li><span class="time">9:00 PM</span> Nighttime Bangla Classics</li>
-    </ul>
+  <h2>Today's Programs</h2>
+  <ul class="program-list">
+    <li data-time="6:00 AM">
+      <span class="time">6:00 AM</span> Morning Folk Songs
+    </li>
+    <li data-time="12:00 PM">
+      <span class="time">12:00 PM</span> River Tales & Stories
+    </li>
+    <li data-time="6:00 PM">
+      <span class="time">6:00 PM</span> Evening Ghazals & Poems
+    </li>
+    <li data-time="9:00 PM">
+      <span class="time">9:00 PM</span> Nighttime Bangla Classics
+    </li>
+  </ul>
   </section>
 
   <!-- Live Audio Player -->
