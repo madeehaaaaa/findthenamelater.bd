@@ -2,9 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>AOBD Radio</title>
+  <title>AOBD Radio — Live</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
 
 <div id="nav-placeholder"></div>
@@ -18,44 +19,31 @@
 
 <main class="radio">
 
-  <section class="radio-intro">
-    <h1>AOBD Radio</h1>
-    <p>This is not a station.<br>This is a listening room for Bangla.</p>
-  </section>
+  <section class="radio-live">
 
-  <section class="now-playing">
-    <h2>Now Playing</h2>
-    <p>Night Letter — Voice & Silence</p>
+    <p class="radio-onair">● ON AIR</p>
+
+    <h1 class="radio-title">AOBD Radio</h1>
+
+    <p class="radio-description">
+      A quiet frequency.<br>
+      Stories, folk memory, and sound carried by breath.
+    </p>
+
+    <!-- NOW PLAYING -->
+    <div class="now-playing">
+      <span class="label">NOW PLAYING</span>
+      <p class="track">
+        Folk night transmission — River songs & distant voices
+      </p>
+    </div>
+
+    <!-- AUDIO PLAYER -->
     <audio controls>
-      <source src="audio/night-01.mp3" type="audio/mpeg">
+      <source src="audio/live.mp3" type="audio/mpeg">
+      Your browser does not support audio.
     </audio>
-  </section>
 
-  <section class="programs">
-    <h2>Programs</h2>
-
-    <div class="program-card">
-      <h3>🌙 Night Letters</h3>
-      <p>Stories, whispers, and Bangla after midnight.</p>
-    </div>
-
-    <div class="program-card">
-      <h3>🌾 Folk & Forgotten</h3>
-      <p>Words and sounds that survived through people.</p>
-    </div>
-
-    <div class="program-card">
-      <h3>🌊 Sound of Bangla</h3>
-      <p>Rivers, rain, streets, breath.</p>
-    </div>
-  </section>
-
-  <section class="archive">
-    <h2>Archive</h2>
-    <ul>
-      <li>Night Letter 01 — 2:14</li>
-      <li>River Sound — 1:02</li>
-    </ul>
   </section>
 
 </main>
